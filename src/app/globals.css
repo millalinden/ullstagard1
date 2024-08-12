@@ -3,31 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --font-erode: 'Erode', sans-serif;
+    --font-satoshi: 'Satoshi', sans-serif;
   }
-}
+  
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @layer utilities {
+    .scrollbar::-webkit-scrollbar {
+      width: 100px;
+      height: 10px;
+      position: absolute;
+    }
+  
+    .scrollbar::-webkit-scrollbar-track {
+      background: #D9D9D9;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #302A36;
+ 
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #302a36d6;
+    }
   }
-}
