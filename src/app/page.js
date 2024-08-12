@@ -1,9 +1,10 @@
 "use client";
+
 import Layout from "./components/Header/layout";
 import Image from "next/image";
 import useContentful from "./utils/useContentful";
 import Card from "./components/Card/page";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 function HomePage() {
@@ -11,14 +12,14 @@ function HomePage() {
   const [allNewsPosts, setAllNewsPosts] = useState([]);
   const [displayedNewsPosts, setDisplayedNewsPosts] = useState([]);
 
-  const updateDisplayedNewsPosts = () => {
+  const updateDisplayedNewsPosts = useCallback(() => {
     const isDesktop = window.innerWidth >= 1024; // Define your breakpoint for desktop
     if (isDesktop) {
       setDisplayedNewsPosts(allNewsPosts.slice(0, 4));
     } else {
       setDisplayedNewsPosts(allNewsPosts.slice(0, 2));
     }
-  };
+  }, [allNewsPosts]);
 
   useEffect(() => {
     const fetchNewsPosts = async () => {
@@ -37,7 +38,7 @@ function HomePage() {
     return () => {
       window.removeEventListener("resize", updateDisplayedNewsPosts);
     };
-  }, [getNewsPosts]);
+  }, [getNewsPosts, updateDisplayedNewsPosts]);
 
   return (
     <Layout>
@@ -48,6 +49,7 @@ function HomePage() {
           </h1>
           <Image
             src="/images/front.png"
+            alt="Front view of Ullsta Gård"
             width={600}
             height={337}
             priority
@@ -56,7 +58,7 @@ function HomePage() {
         </div>
         <p className="font-erode font-regular lg:text-[45px] lg:mx-20 lg:leading-normal">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
           since the 1500s.
         </p>
       </section>
