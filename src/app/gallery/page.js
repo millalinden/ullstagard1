@@ -73,6 +73,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useContentful from "../utils/useContentful";
 import Layout from "../components/Header/layout";
+import Button from "../components/Button/page";
 
 function Gallery() {
   const { getImages } = useContentful();
@@ -106,7 +107,7 @@ function Gallery() {
       <section className="mt-10 text-blueberry text-[4vw] flex justify-around px-5 lg:justify-around items-center font-satoshi text-blueberry font-bold lg:text-[1vw] lg:px-72">
         <button onClick={() => handleTagClick("Alla")} className="uppercase">Alla</button>
         <button onClick={() => handleTagClick("Var")} className="uppercase">Vår</button>
-        <button onClick={() => handleTagClick("sommar")} className="uppercase">Sommar</button>
+        <Button onClick={() => handleTagClick("sommar")}className="button">Sommar</Button>
         <button onClick={() => handleTagClick("Host")} className="uppercase">Höst</button>
         <button onClick={() => handleTagClick("vinter")} className="uppercase">Vinter</button>
       </section>
