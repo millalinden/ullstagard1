@@ -1,58 +1,59 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
 
 // Importing Erode font
 const erode = localFont({
   src: [
     {
-      path: '../../public/font/Erode-Variable.ttf',
-      weight: '300',
+      path: "../../public/font/Erode-Variable.ttf",
+      weight: "300",
     },
     {
-      path: '../../public/font/Erode-Variable.ttf',
-      weight: '400',
+      path: "../../public/font/Erode-Variable.ttf",
+      weight: "400",
     },
     {
-      path: '../../public/font/Erode-Variable.ttf',
-      weight: '500',
+      path: "../../public/font/Erode-Variable.ttf",
+      weight: "500",
     },
     {
-      path: '../../public/font/Erode-Variable.ttf',
-      weight: '600',
+      path: "../../public/font/Erode-Variable.ttf",
+      weight: "600",
     },
     {
-      path: '../../public/font/Erode-Variable.ttf',
-      weight: '700',
+      path: "../../public/font/Erode-Variable.ttf",
+      weight: "700",
     },
   ],
-  variable: '--font-erode',
+  variable: "--font-erode",
 });
 
 // Importing Satoshi font
 const satoshi = localFont({
   src: [
     {
-      path: '../../public/font/Satoshi-Variable.ttf',
-      weight: '300',
+      path: "../../public/font/Satoshi-Variable.ttf",
+      weight: "300",
     },
     {
-      path: '../../public/font/Satoshi-Variable.ttf',
-      weight: '400',
+      path: "../../public/font/Satoshi-Variable.ttf",
+      weight: "400",
     },
     {
-      path: '../../public/font/Satoshi-Variable.ttf',
-      weight: '500',
+      path: "../../public/font/Satoshi-Variable.ttf",
+      weight: "500",
     },
     {
-      path: '../../public/font/Satoshi-Variable.ttf',
-      weight: '600',
+      path: "../../public/font/Satoshi-Variable.ttf",
+      weight: "600",
     },
     {
-      path: '../../public/font/Satoshi-Variable.ttf',
-      weight: '700',
+      path: "../../public/font/Satoshi-Variable.ttf",
+      weight: "700",
     },
   ],
-  variable: '--font-satoshi',
+  variable: "--font-satoshi",
 });
 
 const metadata = {
@@ -63,6 +64,9 @@ const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/images/ullsta1.svg" />
+      </Head>
       <body className="bg-[#FFFDFA]">{children}</body>
     </html>
   );
