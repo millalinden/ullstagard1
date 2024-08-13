@@ -16,13 +16,14 @@ export default function useContentful() {
       const sanitizedEntries = entries.items.map((item) => {
         const imageFields = item.fields;
         const images = imageFields.image.map((img) => {
-          const imageUrl = img.fields.file.url.startsWith('//')
+          const imageUrl = img.fields.file.url.startsWith("//")
             ? `https:${img.fields.file.url}`
             : img.fields.file.url;
           return {
             url: imageUrl,
             title: img.fields.title,
             description: img.fields.description,
+            tags: img.metadata.tags.map((tag) => tag.sys.id),
           };
         });
 
@@ -58,9 +59,8 @@ export default function useContentful() {
     }
   }
 
-
   return {
     getImages,
-    getNewsPosts
+    getNewsPosts,
   };
 }

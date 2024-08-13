@@ -10,9 +10,8 @@
 
   @layer utilities {
     .scrollbar::-webkit-scrollbar {
-      width: 100px;
       height: 10px;
-      position: absolute;
+
     }
   
     .scrollbar::-webkit-scrollbar-track {
