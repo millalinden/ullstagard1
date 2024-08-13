@@ -102,8 +102,8 @@ function Gallery() {
 
   return (
     <Layout>
-      <h2 className="font-satoshi font-[900] tracking-wide uppercase lg:text-[3vw] lg:mt-40 flex justify-center">Bildgalleri</h2>
-      <section className="mt-10 flex justify-around items-center font-satoshi text-blueberry font-bold lg:text-[1vw] lg:px-72">
+      <h2 className="font-satoshi text-blueberry font-[900] text-[10vw] mt-32 tracking-wide uppercase lg:text-[3vw] lg:mt-40 flex justify-center">Bildgalleri</h2>
+      <section className="mt-10 text-blueberry text-[4vw] flex justify-around px-5 lg:justify-around items-center font-satoshi text-blueberry font-bold lg:text-[1vw] lg:px-72">
         <button onClick={() => handleTagClick("Alla")} className="uppercase">Alla</button>
         <button onClick={() => handleTagClick("Var")} className="uppercase">Vår</button>
         <button onClick={() => handleTagClick("sommar")} className="uppercase">Sommar</button>
