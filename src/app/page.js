@@ -126,7 +126,7 @@ function HomePage() {
         <div className="flex-1 lg:overflow-x-auto lg:overflow-y-hidden lg:whitespace-nowrap lg:mt-10 lg:scrollbar">
           <div className="lg:inline-block lg:flex lg:space-x-10">
             <Card
-              src="/images/Lasmar.jpg"
+              src="/images/lasmar.jpg"
               description="Ullsta Gårds historia och den långa traditionen av Familjen Lindén som har bott i huset genom generationer."
               className="lg:w-[500px]"
             />
