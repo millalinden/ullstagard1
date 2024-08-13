@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="../../public/icons/ullsta1.svg" />
+        <link rel="icon" href="/icons/ullsta1.svg" type="image/svg+xml" />
       </Head>
       <body className="bg-[#FFFDFA]">{children}</body>
     </html>
