@@ -112,11 +112,11 @@ function HomePage() {
           </Link>
         </div>
       </section>
-      <hr className="hidden border-black mx-7 lg:mb-16 lg:mx-20 lg:block" />
+      <hr className="hidden border-black mx-7 lg:mb-14 lg:mx-20 lg:block" />
 
-      <section className="flex flex-col lg:mb-10 lg:relative">
+      <section className="flex flex-col lg:mb-10 lg:flex-row lg:relative">
         {/* White background container for the heading */}
-        <div className="bg-[#FFFDFA] lg:w-2/5 lg:py-4 lg:px-8 lg:sticky lg:top-0 lg:left- lg:h-full lg:flex lg:items-center lg:justify-center">
+        <div className="bg-[#FFFDFA] lg:w-2/5 lg:py-4 lg:px-8 lg:sticky lg:top-0 lg:h-full lg:items-center lg:justify-center">
           <h2 className="text-[15vw] ml-10 uppercase font-[900] text-blueberry lg:text-[6.5vw] lg:whitespace-nowrap">
             Läs mer
           </h2>

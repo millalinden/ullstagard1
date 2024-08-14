@@ -35,7 +35,7 @@ export default function Header() {
 
       {/* Desktop Menu (Horizontal Menu) */}
       <nav className="hidden lg:flex lg:pr-32 lg:ml-6">
-        <ul className="flex space-x-32">
+        <ul className="flex space-x-32 text-[1.1vw]">
           <li>
             <Link href="/">
              Hem
@@ -54,6 +54,11 @@ export default function Header() {
           <li>
             <Link href="/contact">
             Hitta hit
+            </Link>
+          </li>
+          <li>
+            <Link href="/guestbook">
+            Gästbok
             </Link>
           </li>
         </ul>

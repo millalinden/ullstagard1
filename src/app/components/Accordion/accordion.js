@@ -1,4 +1,6 @@
+"use client";
 import { useState } from "react";
+
 
 export default function Accordion({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);

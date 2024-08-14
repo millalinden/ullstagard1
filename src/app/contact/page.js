@@ -1,7 +1,7 @@
-"use client";
+
 import Layout from "../components/Header/layout";
 import Accordion from "../components/Accordion/accordion";
-import { useState } from "react";
+
 import Image from "next/image";
 
 export default function Contact() {
