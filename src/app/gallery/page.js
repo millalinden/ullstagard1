@@ -63,28 +63,27 @@ function Gallery() {
 
   return (
     <Layout>
-      <h2 className="font-satoshi text-blueberry font-[900] text-[10vw] mt-32 tracking-wide uppercase lg:text-[3vw] lg:mt-40 flex justify-center">
-        Bildgalleri
-      </h2>
-      <section className="mt-10 text-blueberry text-[4vw] flex justify-around px-5 lg:justify-around items-center font-satoshi text-blueberry font-bold lg:text-[1vw] lg:px-72">
-        <button onClick={() => handleTagClick("Alla")} className="uppercase">
+
+      <section className="mt-10 text-[3vw] font-satoshi px-5 lg:pl-5 mt-32 lg:mt-40 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
+        <Button onClick={() => handleTagClick("Alla")} className="uppercase">
           Alla
-        </button>
-        <button onClick={() => handleTagClick("Var")} className="uppercase">
+        </Button>
+        <Button onClick={() => handleTagClick("Var")} className="uppercase">
           Vår
-        </button>
-        <Button onClick={() => handleTagClick("sommar")} className="button">
+        </Button>
+        <Button onClick={() => handleTagClick("sommar")}>
           Sommar
         </Button>
-        <button onClick={() => handleTagClick("Host")} className="uppercase">
+        <Button onClick={() => handleTagClick("Host")} className="uppercase">
           Höst
-        </button>
-        <button onClick={() => handleTagClick("vinter")} className="uppercase">
+        </Button>
+        <Button onClick={() => handleTagClick("vinter")} className="uppercase">
           Vinter
-        </button>
+        </Button>
       </section>
-      <section className="mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-4">
+      <hr className="border-black mx-5 mt-1"/>
+      <section className="mt-5 lg:mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
           {filteredImages.map((image, index) => (
             <div key={index} className="sm:mt-4 md:mt-0 relative">
               <div className="aspect-w-1 aspect-h-1 overflow-hidden">
@@ -93,9 +92,6 @@ function Gallery() {
                   alt={image.description || "Image description"}
                   width={3024} // Set width according to your needs
                   height={4032} // Set height according to your needs
-                  objectFit="cover"
-                  layout="responsive"
-                  loading="lazy"
                   placeholder="blur"
                   blurDataURL="/images/placeholder2.png"
                   onClick={() => handleImageClick(image, index)}

@@ -1,68 +1,48 @@
-"use client"
-
-import Link from "next/link";
+// Header.js
+"use client";
 import Image from "next/image";
+import NavLink from "../Navigation/NavLink";
+import NavButton from "../Navigation/NavButton";
+import NavBar from "../Navigation/NavBar";
 import { useState } from "react";
-import HamburgerMenu from "./HamburgerMenu/page"; // Adjust the import path as per your file structure
+import Sidebar from "../Navigation/Sidebar";
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
     <header className="w-full flex justify-between items-end fixed px-3 py-5 top-0 left-0 bg-[#FFFDFA] z-10 font-erode">
       <div className="flex items-center">
-        <Link href="/">
-          <div className="w-30 h-30 pl-2">
+        <NavLink href="/">
+        <div className="relative"> {/* Ensure dimensions are respected */}
             <Image
-              src="./icons/ullsta1.svg"
+              src="/icons/ullsta1.svg"
               alt="Sketched Image of Ullsta Gard"
               width={100}
               height={100}
-              priority // Add priority if it's an important image
             />
           </div>
-        </Link>
+        </NavLink>
       </div>
 
       {/* Mobile Menu (Hamburger Menu) */}
-      <div className="block lg:hidden"> {/* Display only on mobile screens */}
-        <HamburgerMenu isOpen={isMobileMenuOpen} toggleMenu={toggleMobileMenu} />
+      <div className="block lg:hidden">
+        <NavButton isOpen={isSidebarOpen} toggleMenu={toggleSidebar} />
       </div>
 
       {/* Desktop Menu (Horizontal Menu) */}
-      <nav className="hidden lg:flex lg:pr-32 lg:ml-6">
-        <ul className="flex space-x-32 text-[1.1vw]">
-          <li>
-            <Link href="/">
-             Hem
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-            Historik
-            </Link>
-          </li>
-          <li>
-            <Link href="/gallery">
-            Bildgalleri
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-            Hitta hit
-            </Link>
-          </li>
-          <li>
-            <Link href="/guestbook">
-            Gästbok
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <NavBar />
+
+      {/* Sidebar */}
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </header>
   );
 }

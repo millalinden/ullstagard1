@@ -29,24 +29,4 @@
   }
 
 
-/* src/styles/globals.css or the relevant css file */
 
-.button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-}
-
-.button .circle {
-  transition: stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease;
-  stroke-dasharray: 0, 282.743; /* 282.743 is the circumference of the circle */
-  stroke-dashoffset: 0;
-}
-
-.button:hover .circle {
-  stroke-dasharray: 282.743, 282.743;
-  stroke-dashoffset: 0;
-}
