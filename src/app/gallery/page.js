@@ -64,7 +64,7 @@ function Gallery() {
   return (
     <Layout>
 
-      <section className="mt-10 text-[3vw] font-satoshi px-5 lg:pl-5 mt-32 lg:mt-40 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
+      <section className="mt-10 text-[4vw] font-satoshi px-5 lg:pl-5 mt-32 lg:mt-40 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
         <Button onClick={() => handleTagClick("Alla")} className="uppercase">
           Alla
         </Button>
