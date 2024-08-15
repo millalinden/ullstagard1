@@ -59,7 +59,7 @@ export default function ImageModal({
 }) {
   return (
     selectedImage && (
-      <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-85 lg:bg-opacity-75 backdrop-blur-md w-screen">
+      <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-95 lg:bg-opacity-75 backdrop-blur-lg w-screen">
         <button
           className="absolute top-5 right-5 py-1 px-2.5 lg:hover:rotate-90 lg:duration-300 lg:transition-all text-xl text-white font-bold"
           onClick={onClose}
