@@ -11,16 +11,16 @@ export default function ImageModal({
 }) {
   return (
     selectedImage && (
-      <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-75 backdrop-blur w-screen">
+      <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-85 lg:bg-opacity-75 backdrop-blur-md w-screen">
         <button
-          className="absolute top-5 right-5 py-1 px-2.5 hover:rotate-90 duration-300 transition-all text-xl text-white font-bold"
+          className="absolute top-5 right-5 py-1 px-2.5 lg:hover:rotate-90 lg:duration-300 lg:transition-all text-xl text-white font-bold"
           onClick={onClose}
         >
           &#10005;
         </button>
         <div className="relative flex items-center">
           <button
-            className="text-white text-3xl md:text-5xl hover:text-zinc-300 hover:-translate-x-1 duration-300 ease-in-out"
+            className="text-white text-3xl md:text-5xl hover:text-zinc-300 lg:hover:-translate-x-1 lg:duration-300 lg:ease-in-out"
             onClick={onPrev}
           >
             <IoIosArrowBack />
