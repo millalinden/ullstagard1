@@ -61,7 +61,7 @@ export default function ImageModal({
     selectedImage && (
       <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-95 lg:bg-opacity-75 backdrop-blur-lg w-screen">
         <button
-          className="absolute top-5 right-5 py-1 px-2.5 lg:hover:rotate-90 lg:duration-300 lg:transition-all text-xl text-white font-bold"
+          className="absolute top-6 right-6 lg:top-5 lg:right-5 py-1 px-2.5 lg:hover:rotate-90 lg:duration-300 lg:transition-all text-xl text-white font-bold"
           onClick={onClose}
         >
           &#10005;
@@ -73,7 +73,7 @@ export default function ImageModal({
           >
             <IoIosArrowBack />
           </button>
-          <div className="mx-4">
+          <div className="mx-4 mt-10 lg:mt-0">
             <Image
               src={selectedImage}
               alt="Selected Image"
