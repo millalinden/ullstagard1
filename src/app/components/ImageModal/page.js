@@ -35,7 +35,7 @@ export default function ImageModal({
             />
           </div>
           <button
-            className="text-white text-3xl md:text-5xl hover:text-zinc-300 hover:translate-x-1 duration-300 ease-in-out"
+            className="text-white text-3xl md:text-5xl hover:text-zinc-300 lg:hover:translate-x-1 lg:duration-300 lg:ease-in-out"
             onClick={onNext}
           >
             <IoIosArrowForward />
