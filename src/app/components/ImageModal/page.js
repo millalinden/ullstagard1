@@ -1,4 +1,6 @@
-import Image from "next/image"; // Assuming you are using Next.js
+import Image from "next/image";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function ImageModal({
   images,
@@ -10,30 +12,33 @@ export default function ImageModal({
   return (
     selectedImage && (
       <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-75 backdrop-blur w-screen">
-        <Image
-          src={selectedImage}
-          alt="Selected Image"
-          width={500}
-          height={500}
-        />
         <button
-          className="absolute top-5 right-5 py-1 px-2.5 hover:rotate-90 transition-all text-xl text-white font-bold"
+          className="absolute top-5 right-5 py-1 px-2.5 hover:rotate-90 duration-300 transition-all text-xl text-white font-bold"
           onClick={onClose}
         >
           &#10005;
         </button>
-        <div className="">
+        <div className="relative flex items-center">
           <button
-            className="absolute top-1/2 -translate-y-1/2 right-96 text-white py-6 px-4 md:py-24 md:px-4 text-3xl md:text-5xl"
-            onClick={onNext}
-          >
-            &gt;
-          </button>
-          <button
-            className="absolute -translate-y-1/2 left-96 top-1/2 text-white md:py-24 md:px-4 text-2xl md:text-5xl"
+            className="text-white text-3xl md:text-5xl hover:text-zinc-300 hover:-translate-x-1 duration-300 ease-in-out"
             onClick={onPrev}
           >
-            &lt;
+            <IoIosArrowBack />
+          </button>
+          <div className="mx-4">
+            <Image
+              src={selectedImage}
+              alt="Selected Image"
+              width={500}
+              height={500}
+              className="max-w-full max-h-full"
+            />
+          </div>
+          <button
+            className="text-white text-3xl md:text-5xl hover:text-zinc-300 hover:translate-x-1 duration-300 ease-in-out"
+            onClick={onNext}
+          >
+            <IoIosArrowForward />
           </button>
         </div>
       </div>
