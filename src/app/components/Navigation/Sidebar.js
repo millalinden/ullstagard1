@@ -10,14 +10,14 @@ export default function Sidebar({ isOpen, onClose }) {
       }`}
     >
       <button
-        className="absolute top-3 right-3 text-xl focus:outline-none"
+        className="absolute text-blueberry top-8 right-7 lg:text-[vw] focus:outline-none"
         onClick={onClose}
         aria-label="Close menu"
       >
         <span className="sr-only">Close</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-7 w-7"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -30,12 +30,22 @@ export default function Sidebar({ isOpen, onClose }) {
           />
         </svg>
       </button>
-      <ul className="flex flex-col items-end justify-start h-full mt-32">
-        <NavLink href="/">Hem</NavLink>
-        <NavLink href="/">Historik</NavLink>
-        <NavLink href="/gallery">Bildgalleri</NavLink>
-        <NavLink href="/contact">Hitta Hit</NavLink>
-      </ul>
+      <div className="flex justify-end h-full mt-32 mr-10">
+        <ul className="flex flex-col items-end text-[1.6vw]">
+          <NavLink href="/" className="pb-5">
+            Hem
+          </NavLink>
+          <NavLink href="/" className="pb-5">
+            Historik
+          </NavLink>
+          <NavLink href="/contact" className="pb-5">
+            Hitta Hit
+          </NavLink>
+          <NavLink href="/gallery" className="pb-5">
+            Bildgalleri
+          </NavLink>
+        </ul>
+      </div>
     </nav>
   );
 }
