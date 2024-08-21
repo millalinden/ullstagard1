@@ -63,8 +63,7 @@ function Gallery() {
 
   return (
     <Layout>
-
-      <section className="mt-10 text-[4vw] font-satoshi px-5 lg:pl-5 mt-32 lg:mt-40 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
+      <section className="text-[4vw] font-satoshi px-5 lg:pl-5 mt-32 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
         <Button onClick={() => handleTagClick("Alla")} className="uppercase">
           Alla
         </Button>
@@ -82,7 +81,7 @@ function Gallery() {
         </Button>
       </section>
       <hr className="border-black mx-5 mt-1"/>
-      <section className="mt-5 lg:mt-10">
+      <section className="mt-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
           {filteredImages.map((image, index) => (
             <div key={index} className="sm:mt-4 md:mt-0 relative">

@@ -1,4 +1,3 @@
-// Header.js
 "use client";
 import Image from "next/image";
 import NavLink from "../Navigation/NavLink";
@@ -14,15 +13,12 @@ export default function Header() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
 
   return (
-    <header className="w-full flex justify-between items-end fixed px-3 py-5 top-0 left-0 bg-[#FFFDFA] z-10 font-erode">
+    <header className="w-full flex justify-between items-end fixed px-3 py-5 top-0 h-30 bg-[#FFFDFA] z-50">
       <div className="flex items-center">
         <NavLink href="/">
-        <div className="relative"> {/* Ensure dimensions are respected */}
+          <div className="relative z-10">
             <Image
               src="/icons/ullsta1.svg"
               alt="Sketched Image of Ullsta Gard"
@@ -34,15 +30,17 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu (Hamburger Menu) */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden z-10">
         <NavButton isOpen={isSidebarOpen} toggleMenu={toggleSidebar} />
       </div>
 
       {/* Desktop Menu (Horizontal Menu) */}
-      <NavBar />
+      <div className="hidden lg:block ">
+        <NavBar />
+      </div>
 
       {/* Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      <Sidebar isOpen={isSidebarOpen} />
     </header>
   );
 }

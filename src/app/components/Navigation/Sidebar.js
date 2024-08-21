@@ -1,51 +1,88 @@
-// Sidebar.js
 import NavLink from "./NavLink";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function Sidebar({ isOpen }) {
+  const sidebarRef = useRef(null);
+  const navLinksRef = useRef([]);
+
+  useEffect(() => {
+    const timeline = gsap.timeline({ paused: true });
+
+    // Sidebar animation
+    timeline.to(sidebarRef.current, {
+      y: "100%",
+      duration: 0.7,
+      ease: "sine.inOut",
+    });
+
+    // Nav links animation
+    timeline.fromTo(
+      navLinksRef.current,
+      {
+        y: -20,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "sine.inOut",
+        stagger: 0.1,
+      },
+      "-=0.8"
+    );
+
+    if (isOpen) {
+      timeline.play();
+    } else {
+      // Sidebar out
+      gsap.to(sidebarRef.current, {
+        y: "-100%",
+        duration: 0.8,
+        ease: "sine.inOut",
+      });
+
+      // Nav links out
+      gsap.to(navLinksRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "sine.inOut",
+        stagger: 0.03,
+      });
+    }
+  }, [isOpen]);
+
+  const links = [
+    { href: "/", text: "Hem" },
+    { href: "/history", text: "Historik" },
+    { href: "/contact", text: "Hitta Hit" },
+    { href: "/gallery", text: "Bildgalleri" },
+  ];
+
   return (
     <nav
+      ref={sidebarRef}
       role="navigation"
-      className={`fixed top-0 left-0 w-full h-full bg-[#FFFDFA] z-50 transform transition-transform ease-in-out duration-700 ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      className="z-10 fixed left-0 top-30 w-full h-full bg-[#FFFDFA] lg:hidden"
     >
-      <button
-        className="absolute text-blueberry top-8 right-7 lg:text-[vw] focus:outline-none"
-        onClick={onClose}
-        aria-label="Close menu"
-      >
-        <span className="sr-only">Close</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-7"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <div className="flex justify-end h-full mt-32 mr-10">
-        <ul className="flex flex-col items-end text-[1.6vw]">
-          <NavLink href="/" className="pb-5">
-            Hem
-          </NavLink>
-          <NavLink href="/" className="pb-5">
-            Historik
-          </NavLink>
-          <NavLink href="/contact" className="pb-5">
-            Hitta Hit
-          </NavLink>
-          <NavLink href="/gallery" className="pb-5">
-            Bildgalleri
-          </NavLink>
+      <div className="flex flex-col">
+        <ul className="flex flex-col text-right">
+          {links.map((link, index) => (
+            <li
+              key={index}
+              ref={(el) => (navLinksRef.current[index] = el)}
+
+            >
+              <NavLink href={link.href}>{link.text}</NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
 }
+
+
+

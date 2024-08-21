@@ -1,6 +1,4 @@
-// NavButton.js
-"use client"; // Mark as client component
-import { useState } from "react";
+"use client";
 
 export default function NavButton({ isOpen, toggleMenu }) {
   return (
@@ -11,9 +9,10 @@ export default function NavButton({ isOpen, toggleMenu }) {
         aria-expanded={isOpen}
         aria-controls="menu"
       >
-        <span className="block h-[1.5px] w-6 bg-black my-1"></span>
-        <span className="block h-[1.5px] w-6 bg-black my-1"></span>
-        <span className="block h-[1.5px] w-6 bg-black my-1"></span>
+        <div className={`relative w-6 h-6 transition-transform duration-800 ${isOpen ? 'open' : ''}`}>
+          <span className={`block absolute left-0 h-[1px] w-6 bg-black transition-transform duration-500 ${isOpen ? 'transform rotate-45 top-1/2' : 'top-1'}`}></span>
+          <span className={`block absolute left-0 h-[1px] w-6 bg-black transition-transform duration-500 ${isOpen ? 'transform -rotate-45 top-1/2' : 'top-3'}`}></span>
+        </div>
       </button>
     </div>
   );
