@@ -13,7 +13,8 @@ export default function News() {
       try {
         const newsPostsData = await getNewsPosts();
         setAllNewsPosts(newsPostsData);
-        updateDisplayedNewsPosts();
+        // If updateDisplayedNewsPosts is needed, make sure it's defined
+        // updateDisplayedNewsPosts();
       } catch (error) {
         console.error("Error fetching newsPosts:", error);
       }
@@ -23,32 +24,31 @@ export default function News() {
 
   return (
     <Layout>
-      <section>
-        <div className="my-20">
-          <h2 className="uppercase font-satoshi font-[900] lg:text-[5vw] text-blueberry text-center break-all">
+      <section className="mt-28 mb-10 mx-5">
+        <div className=" mx-5">
+          <h2 className="uppercase font-satoshi font-black text-[10vw] lg:text-[5vw] text-blueberry text-left">
             Senaste Händelserna
           </h2>
         </div>
       </section>
 
-      <section className="lg:mx-20">
+      <section className="mx-10 lg:mx-20">
         {allNewsPosts.map((post, index) => (
           <div key={index} className="mb-8">
-            <hr className="lg:border-black" />
+            <hr className="border-t border-black lg:border-black" />
             <div className="flex justify-between items-start">
-              {/* Date on the left */}
-              <p className="font-satoshi lg:text-[1vw]  mt-1 flex-shrink-0">
+              <p className="font-satoshi text-[2vw] lg:text-[1vw] mt-1 flex-shrink-0">
                 {new Date(post.date).toLocaleDateString()}
               </p>
 
               {/* Title and description on the right */}
-              <div className="font-erode flex flex-col w-full lg:w-3/6 lg:mr-10 lg:mt-5">
-                <h4 className="font-[500] lg:text-[1.3vw] text-left">
+              <div className="font-erode flex flex-col w-full w-4/6 lg:w-3/6 lg:mr-10 lg:mt-5">
+                <h4 className="font-[500] mt-1 lg:text-[1.3vw] text-left">
                   {post.title}
                 </h4>
-                <p className="lg:text-[1.2vw] text-left">
+                <div className="lg:text-[1.2vw] text-left">
                   {documentToReactComponents(post.description)}
-                </p>
+                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import NavLink from "./NavLink";
+import NavLinkAdd from "./NavLinkAdd";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -11,7 +12,7 @@ export default function Sidebar({ isOpen }) {
 
     // Sidebar animation
     timeline.to(sidebarRef.current, {
-      y: "100%",
+      y: 0,
       duration: 0.7,
       ease: "sine.inOut",
     });
@@ -39,7 +40,7 @@ export default function Sidebar({ isOpen }) {
       // Sidebar out
       gsap.to(sidebarRef.current, {
         y: "-100%",
-        duration: 0.8,
+        duration: 0.6,
         ease: "sine.inOut",
       });
 
@@ -55,34 +56,46 @@ export default function Sidebar({ isOpen }) {
   }, [isOpen]);
 
   const links = [
-    { href: "/", text: "Hem" },
-    { href: "/history", text: "Historik" },
-    { href: "/contact", text: "Hitta Hit" },
-    { href: "/gallery", text: "Bildgalleri" },
+    { href: "/", text: "Hem", number: "01" },
+    { href: "/history", text: "Historik", number: "02" },
+    { href: "/contact", text: "Hitta Hit", number: "03" },
+    { href: "/gallery", text: "Bildgalleri", number: "04" },
   ];
 
   return (
     <nav
       ref={sidebarRef}
       role="navigation"
-      className="z-10 fixed left-0 top-30 w-full h-full bg-[#FFFDFA] lg:hidden"
+      className="z-40 fixed left-0 top-20 w-full h-full bg-[#FFFDFA] px-5 lg:hidden"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col pt-6">
         <ul className="flex flex-col text-right">
           {links.map((link, index) => (
             <li
               key={index}
               ref={(el) => (navLinksRef.current[index] = el)}
-
+              className="pb-5"
             >
+              {link.number}
               <NavLink href={link.href}>{link.text}</NavLink>
             </li>
           ))}
+        </ul>
+        <ul className="flex flex-col text-right pt-28">
+          <li
+            ref={(el) => (navLinksRef.current[links.length] = el)}
+            className="pb-2"
+          >
+            <NavLinkAdd href="/news">Senaste Händelserna</NavLinkAdd>
+          </li>
+          <li
+            ref={(el) => (navLinksRef.current[links.length + 1] = el)}
+            className="pb-5"
+          >
+            <NavLinkAdd href="/guestbook">Gästbok</NavLinkAdd>
+          </li>
         </ul>
       </div>
     </nav>
   );
 }
-
-
-

@@ -13,34 +13,34 @@ export default function Header() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-
   return (
-    <header className="w-full flex justify-between items-end fixed px-3 py-5 top-0 h-30 bg-[#FFFDFA] z-50">
-      <div className="flex items-center">
-        <NavLink href="/">
-          <div className="relative z-10">
-            <Image
-              src="/icons/ullsta1.svg"
-              alt="Sketched Image of Ullsta Gard"
-              width={100}
-              height={100}
-            />
-          </div>
-        </NavLink>
-      </div>
+    <>
+      <header className="w-full flex justify-between items-end fixed pr-5 py-5 top-0 bg-[#FFFDFA] z-50">
+        <div className="flex items-center">
+          <NavLink href="/">
+            <div className="relative z-10">
+              <Image
+                src="/icons/ullsta1.svg"
+                alt="Sketched Image of Ullsta Gard"
+                width={100}
+                height={100}
+              />
+            </div>
+          </NavLink>
+        </div>
 
-      {/* Mobile Menu (Hamburger Menu) */}
-      <div className="block lg:hidden z-10">
-        <NavButton isOpen={isSidebarOpen} toggleMenu={toggleSidebar} />
-      </div>
+        {/* Mobile Menu (Hamburger Menu) */}
+        <div className="block lg:hidden z-10">
+          <NavButton isOpen={isSidebarOpen} toggleMenu={toggleSidebar} />
+        </div>
 
-      {/* Desktop Menu (Horizontal Menu) */}
-      <div className="hidden lg:block ">
-        <NavBar />
-      </div>
-
+        {/* Desktop Menu (Horizontal Menu) */}
+        <div className="hidden lg:block ">
+          <NavBar />
+        </div>
+      </header>
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} />
-    </header>
+    </>
   );
 }

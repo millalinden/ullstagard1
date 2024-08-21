@@ -13,6 +13,7 @@ module.exports = {
       },
       colors: {
         blueberry: "#302A36",
+        blueberryLight: "#68636B",
       },
       keyframes: {
         marquee: {
