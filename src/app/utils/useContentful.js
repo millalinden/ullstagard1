@@ -1,4 +1,8 @@
+
+
 import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import React from "react";
 
 export default function useContentful() {
   const client = createClient({
@@ -40,7 +44,7 @@ export default function useContentful() {
   async function getNewsPosts() {
     try {
       const entries = await client.getEntries({
-        content_type: "newsPost", // Adjust content type ID if needed
+        content_type: "newsPost",
       });
 
       const sanitizedEntries = entries.items.map((item) => {
@@ -55,12 +59,25 @@ export default function useContentful() {
       return sanitizedEntries;
     } catch (error) {
       console.error("Error fetching news posts:", error);
-      throw error; // Rethrow the error to propagate it to the calling code
+      throw error;
     }
   }
+
+  const renderRichTextDocument = (document) => {
+    return documentToReactComponents(document, {
+      renderNode: {
+        "embedded-asset-block": (node) => {
+          const { file, title } = node.data.target.fields;
+          const imageUrl = file.url.startsWith("//") ? `https:${file.url}` : file.url;
+          return <img src={imageUrl} alt={title} />;
+        },
+      },
+    });
+  };
 
   return {
     getImages,
     getNewsPosts,
+    renderRichTextDocument,
   };
 }
