@@ -2,7 +2,7 @@
 
 export default function NavButton({ isOpen, toggleMenu }) {
   return (
-    <div className="relative pr-2 bg-[#FFFDFA]">
+    <div className="relative pr-2">
       <button
         className="text-3xl focus:outline-none"
         onClick={toggleMenu}

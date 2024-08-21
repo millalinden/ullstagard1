@@ -66,7 +66,7 @@ export default function Sidebar({ isOpen }) {
     <nav
       ref={sidebarRef}
       role="navigation"
-      className="z-40 fixed left-0 top-20 w-full h-full bg-[#FFFDFA] px-5 lg:hidden"
+      className="z-40 fixed left-0 top-20 w-full h-full bg-offwhite bg-opacity-95 backdrop-blur-md	px-5 lg:hidden"
     >
       <div className="flex flex-col pt-6">
         <ul className="flex flex-col text-right">

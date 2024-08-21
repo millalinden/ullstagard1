@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full flex justify-between items-end fixed pr-5 py-5 top-0 bg-[#FFFDFA] z-50">
+      <header className="w-full flex justify-between items-end fixed pr-5 py-5 top-0 bg-offwhite bg-opacity-80 backdrop-blur-xl z-50">
         <div className="flex items-center">
           <NavLink href="/">
             <div className="relative z-10">
@@ -24,6 +24,7 @@ export default function Header() {
                 alt="Sketched Image of Ullsta Gard"
                 width={100}
                 height={100}
+                className="mb-1"
               />
             </div>
           </NavLink>
