@@ -1,3 +1,4 @@
+"use client";
 import useGuestbookForm from "@/app/utils/useGuestbookForm";
 import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
