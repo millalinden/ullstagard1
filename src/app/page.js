@@ -46,7 +46,7 @@ function HomePage() {
 
   return (
     <Layout>
-      <section className="lg:mb-28 ">
+      <section className="lg:mb-16 ">
         <div className="lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col md:items-center">
           <h1 className=" flex flex-col items-center mt-32 pb-2 text-[13vw] font-[900] uppercase text-blueberry tracking-wide lg:text-[13vw]">
             Ullsta Gård
@@ -60,16 +60,17 @@ function HomePage() {
             className="px-6 mb-5 md:mt-[-80px] lg:mt-[-120px] lg:mb-10"
           />
         </div>
-        <p className="px-6 pb-10 text-[5vw] font-erode font-regular md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-20 lg:leading-normal">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s.
+        <p className="px-6 pb-5 text-[5vw] font-erode font-regular md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-20 lg:leading-normal">
+          Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred
+          i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927
+          och är idag en viktig del i familjens fritid med perfekt närhet till
+          Stockholm.
         </p>
       </section>
       {/* <Marquee /> */}
       <hr className="hidden border-black mx-5 lg:mb-10 lg:mx-20 lg:block" />
       <section className="lg:flex font-erode w-full">
-        <h2 className="font-satoshi pb-1 font-[700] text-[7vw] tracking-[3%] text-blueberry mx-7 text-wrap md:text-[3vw] md:ml-14 lg:text-[2.5vw] lg:ml-28">
+        <h2 className="font-satoshi pb-1 font-[700] text-[7vw] tracking-[3%] text-blueberry mx-7 text-wrap md:text-[3vw] md:ml-14 lg:text-[3vw] lg:ml-20">
           Senaste händelserna
         </h2>
         <section className="mb-5 grid grid-cols-1 lg:gap-y-6 lg:grid-cols-2 lg:pl-48 lg:px-20 lg:gap-x-12 lg:mb-10 w-full">
@@ -95,12 +96,12 @@ function HomePage() {
         </section>
       </section>
       <div className="flex justify-end mr-10 lg:mr-32 lg:mb-4 ">
-          <Link href="/news">
-            <button className="cursor-pointer">
-              <HiOutlineArrowLongRight size={30}/>
-            </button>
-          </Link>
-        </div>
+        <Link href="/news">
+          <button className="cursor-pointer">
+            <HiOutlineArrowLongRight size={30} />
+          </button>
+        </Link>
+      </div>
       <hr className="border-black mx-7 my-5 md:mx-10 lg:mb-10 lg:mx-20" />
 
       <section className="flex flex-col lg:mb-10 lg:flex-row lg:relative">
@@ -122,8 +123,8 @@ function HomePage() {
             />
             <Card
               src="/images/snacks.jpeg"
-              title=""
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              title="Vad har hänt sedan sist?"
+              description="Håll dig uppdaterad om de senaste projekten, besöken och nyheterna."
               className="lg:w-[500px]"
             />
             <Card

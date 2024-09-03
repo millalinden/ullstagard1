@@ -1,15 +1,61 @@
-export default function Form() {
+import useGuestbookForm from "@/app/utils/useGuestbookForm";
+import React, { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
+
+export default function Form({ children, closeForm }) {
+  const {
+    state: { firstName, lastName, comment },
+    setState,
+    submitForm,
+  } = useGuestbookForm();
+
+  // State to handle the success message
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState({ [name]: value });
+  };
+
+  // Custom form submission handler
+  const handleSubmit = async (e) => {
+    const message = await submitForm(e); // Handle form submission and get a message
+    setSuccessMessage(message);
+
+    // Optional: Clear success message after a few seconds
+    setTimeout(() => setSuccessMessage(""), 5000); // Clear after 5 seconds
+  };
+
   return (
-    <>
-      <form className="text-blueberry w-screen h-screen bg-[#E4D292] relative lg:max-h-[30rem]">
-        <h2 className="font-erode text-blueberry text-[7vw] p-14 lg:text-[3vw] lg:mx-20">
-          Dela gärna en mening om ditt besök!
-        </h2>
-        <div className="lg:flex	">
-          <div className="flex flex-col mx-14 mb-6">
+    <form
+      className="text-blueberry w-full max-h-[35.5rem] bg-[#FAF7F2] p-14 lg:max-h-[40rem] overflow-hidden py-20"
+      onSubmit={handleSubmit} // Use the custom submit handler
+    >
+      <button
+        type="button"
+        onClick={closeForm}
+        className="absolute top-10 right-10 text-blueberry text-2xl"
+      >
+        <IoCloseOutline />
+      </button>
+      <h2 className="font-satoshi text-blueberry text-[4vw] pb-10 lg:text-[2vw]">
+        Dela gärna en mening om ditt besök!
+      </h2>
+
+      {/* Display success message */}
+      {successMessage && (
+        <div className="text-green-500 mb-4">{successMessage}</div>
+      )}
+
+      {/* Container for Inputs - Aligns inputs to the right on desktop */}
+      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 lg:pb-10">
+        {/* First Name and Last Name Fields */}
+        <div className="lg:flex lg:space-x-4">
+          {/* First Name */}
+          <div className="flex flex-col mb-6 lg:mb-0 lg:w-[23rem]">
             <label
               htmlFor="firstName"
-              className="uppercase font-satoshi font-[600] text-[4vw] tracking-wide lg:text-[1vw]"
+              className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
             >
               Förnamn
             </label>
@@ -17,13 +63,17 @@ export default function Form() {
               type="text"
               id="firstName"
               name="firstName"
-              className="focus:outline-none bg-[#E4D292] border-black border-b font-satoshi text-[4vw] pt-2 lg:text-[1vw] "
+              value={firstName}
+              onChange={handleChange}
+              className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
             />
           </div>
-          <div className="flex flex-col mx-14 mb-6">
+
+          {/* Last Name */}
+          <div className="flex flex-col mb-6 lg:w-[23rem]">
             <label
               htmlFor="lastName"
-              className="uppercase font-satoshi font-[600] text-[4vw] tracking-wide lg:text-[1vw]"
+              className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
             >
               Efternamn
             </label>
@@ -31,14 +81,18 @@ export default function Form() {
               type="text"
               id="lastName"
               name="lastName"
-              className="focus:outline-none bg-[#E4D292] border-black border-b font-satoshi text-[4vw] pt-2 lg:text-[1vw] "
+              value={lastName}
+              onChange={handleChange}
+              className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
             />
           </div>
         </div>
-        <div className="flex flex-col mx-14 mb-20">
+
+        {/* Comment Field directly under First Name on desktop */}
+        <div className="flex flex-col lg:w-[47rem]">
           <label
             htmlFor="comment"
-            className="uppercase font-satoshi font-[600] text-[4vw] tracking-wide lg:text-[1vw]"
+            className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
           >
             Kommentar
           </label>
@@ -46,24 +100,21 @@ export default function Form() {
             type="text"
             id="comment"
             name="comment"
-            className="focus:outline-none bg-[#E4D292] border-black border-b font-satoshi text-[4vw] lg:text-[1vw] pt-2"
+            value={comment}
+            onChange={handleChange}
+            className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
           />
+          {/* Submit Button */}
+          <div className="absolute bottom-10 right-12 ">
+            <button
+              type="submit"
+              className="uppercase font-satoshi text-[3vw] cursor-pointer lg:text-[1vw] hover:bg-black px-4 py-2 hover:text-[#FAF7F2]"
+            >
+              Publicera
+            </button>
+          </div>
         </div>
-
-        <div className="absolute bottom-4 right-5 p-4">
-          <button
-            type="submit"
-            className="uppercase font-satoshi font-[600] text-[4vw] border-black border py-2 px-4 cursor-pointer tracking-wide lg:text-[1vw]"
-          >
-            Publicera
-          </button>
-        </div>
-        <div>
-          <p className="uppercase font-satoshi text-[4vw] text-[#616161] opacity-65 tracking-wide mx-8 font-[600] lg:text-[1vw] [writing-mode:vertical-lr] transform rotate-180">
-            Ullsta Gård
-          </p>
-        </div>
-      </form>
-    </>
+      </div>
+    </form>
   );
 }

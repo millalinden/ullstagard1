@@ -1,11 +1,10 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import useContentful from "../utils/useContentful";
-import Layout from "../components/Header/layout";
-import Button from "../components/Button/page";
-import ImageModal from "../components/ImageModal/page";
+import useContentful from "../../utils/useContentful";
+import Layout from "../../components/Header/layout";
+import FilterButton from "../../components/FilterBtn/page";
+import ImageModal from "../../components/ImageModal/page";
 
 function Gallery() {
   const { getImages } = useContentful();
@@ -13,6 +12,7 @@ function Gallery() {
   const [selectedTag, setSelectedTag] = useState("Alla");
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState(new Set());
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -61,36 +61,43 @@ function Gallery() {
     setSelectedIndex(prevIndex);
   };
 
+  const handleImageLoad = (src) => {
+    setLoadedImages((prev) => new Set(prev.add(src)));
+  };
+
   return (
     <Layout>
-      <section className="text-[3vw] md:text-[2vw] font-satoshi px-5 lg:pl-5 mt-32 lg:flex lg:gap-4 lg:items-start lg:text-[1vw]">
-        <Button onClick={() => handleTagClick("Alla")} className="uppercase">
+      <section className="flex gap-2 justify-start mx-5 flex-wrap mt-28 lg:mt-32 lg:gap-4 ">
+        <FilterButton onClick={() => handleTagClick("Alla")} className="uppercase">
           Alla
-        </Button>
-        <Button onClick={() => handleTagClick("Var")} className="uppercase">
+        </FilterButton>
+        <FilterButton onClick={() => handleTagClick("Var")} className="uppercase">
           Vår
-        </Button>
-        <Button onClick={() => handleTagClick("sommar")}>
+        </FilterButton>
+        <FilterButton onClick={() => handleTagClick("sommar")} className="uppercase">
           Sommar
-        </Button>
-        <Button onClick={() => handleTagClick("Host")} className="uppercase">
+        </FilterButton>
+        <FilterButton onClick={() => handleTagClick("Host")} className="uppercase">
           Höst
-        </Button>
-        <Button onClick={() => handleTagClick("vinter")} className="uppercase">
+        </FilterButton>
+        <FilterButton onClick={() => handleTagClick("vinter")} className="uppercase">
           Vinter
-        </Button>
+        </FilterButton>
       </section>
-      <hr className="border-black mx-5 mt-1"/>
-      <section className="mt-5">
+      <hr className="border-black mx-5 mt-3 lg:mt-5"/>
+      <section className="mt-3 lg:mt-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
           {filteredImages.map((image, index) => (
             <div key={index} className="sm:mt-4 md:mt-0 relative">
-              <div className="aspect-w-1 aspect-h-1 overflow-hidden">
+              <div
+                className={`aspect-w-1 aspect-h-1 overflow-hidden ${loadedImages.has(image.url) ? 'animate-fadeIn' : 'opacity-0'}`}
+                onLoad={() => handleImageLoad(image.url)}
+              >
                 <Image
                   src={image.url}
                   alt={image.description || "Image description"}
-                  width={3024} // Set width according to your needs
-                  height={4032} // Set height according to your needs
+                  width={3024} 
+                  height={4032}
                   placeholder="blur"
                   blurDataURL="/images/placeholder2.png"
                   onClick={() => handleImageClick(image, index)}

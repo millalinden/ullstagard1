@@ -1,3 +1,4 @@
+// Hook for managing interactions with Contentful - it fetches and renders the different types of content
 
 
 import { createClient } from "contentful";
@@ -50,9 +51,9 @@ export default function useContentful() {
       const sanitizedEntries = entries.items.map((item) => {
         const newsFields = item.fields;
         return {
-          title: newsFields.newsTitle,
-          date: newsFields.newsDate,
           description: newsFields.newsDescription,
+          date: newsFields.newsDate,
+          title: newsFields.newsTitle,
         };
       });
 
@@ -69,15 +70,45 @@ export default function useContentful() {
         "embedded-asset-block": (node) => {
           const { file, title } = node.data.target.fields;
           const imageUrl = file.url.startsWith("//") ? `https:${file.url}` : file.url;
-          return <img src={imageUrl} alt={title} />;
+          return (
+            <div className="mb-4 w-full h-64 overflow-hidden">
+              <img className="w-full h-full object-cover" src={imageUrl} alt={title} />
+            </div>
+          );
+        },
+        paragraph: (node, children) => {
+          return <p className="mb-4">{children}</p>;
         },
       },
     });
   };
+  
+  async function getGuestbookComment() {
+    try {
+      const entries = await client.getEntries({
+        content_type: "guestbookComment",
+      });
+
+      const sanitizedEntries = entries.items.map((item) => {
+        const guestbookFields = item.fields;
+        return {
+          firstName: guestbookFields.firstName,
+          lastName: guestbookFields.lastName,
+          comment: guestbookFields.comment,
+        };
+      });
+
+      return sanitizedEntries;
+    } catch (error) {
+      console.error("Error fetching guestbook comments:", error);
+      throw error;
+    }
+  }
 
   return {
     getImages,
     getNewsPosts,
     renderRichTextDocument,
+    getGuestbookComment,
   };
 }

@@ -1,50 +1,36 @@
 import NavLink from "./NavLink";
 import NavLinkAdd from "./NavLinkAdd";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function Sidebar({ isOpen }) {
   const sidebarRef = useRef(null);
   const navLinksRef = useRef([]);
 
-  useEffect(() => {
-    const timeline = gsap.timeline({ paused: true });
+  useLayoutEffect(() => {
+    // Initial sidebar setup
+    gsap.set(sidebarRef.current, { y: "-100%" });
 
-    // Sidebar animation
-    timeline.to(sidebarRef.current, {
-      y: 0,
-      duration: 0.7,
-      ease: "sine.inOut",
-    });
-
-    // Nav links animation
-    timeline.fromTo(
-      navLinksRef.current,
-      {
-        y: -20,
-        opacity: 0,
-      },
-      {
+    // Animation on isOpen change
+    if (isOpen) {
+      gsap.to(sidebarRef.current, {
+        y: 0,
+        duration: 0.7,
+        ease: "sine.inOut",
+      });
+      gsap.to(navLinksRef.current, {
         y: 0,
         opacity: 1,
         duration: 0.8,
         ease: "sine.inOut",
         stagger: 0.1,
-      },
-      "-=0.8"
-    );
-
-    if (isOpen) {
-      timeline.play();
+      });
     } else {
-      // Sidebar out
       gsap.to(sidebarRef.current, {
         y: "-100%",
         duration: 0.6,
         ease: "sine.inOut",
       });
-
-      // Nav links out
       gsap.to(navLinksRef.current, {
         y: -50,
         opacity: 0,
@@ -66,9 +52,10 @@ export default function Sidebar({ isOpen }) {
     <nav
       ref={sidebarRef}
       role="navigation"
-      className="z-40 fixed left-0 top-20 w-full h-full bg-offwhite bg-opacity-95 backdrop-blur-2xl lg:backdrop-blur-md	px-5 lg:hidden"
+      className="z-20 fixed left-0 top-0 w-full h-full bg-offwhite bg-opacity-95 backdrop-blur-xl px-5 lg:hidden"
+      style={{ transform: "translateY(-100%)" }} // Set initial transform to hide the sidebar
     >
-      <div className="flex flex-col pt-6">
+      <div className="flex flex-col pt-32">
         <ul className="flex flex-col text-right">
           {links.map((link, index) => (
             <li

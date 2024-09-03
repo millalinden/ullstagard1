@@ -3,7 +3,7 @@ import NavLinkAdd from "./NavLinkAdd";
 
 export default function NavBar() {
   return (
-    <nav className="hidden lg:flex lg:items-center lg:justify-between lg:pr-32 lg:ml-6">
+    <nav className="hidden lg:flex lg:items-center lg:justify-between lg:pr-32 lg:ml-6 lg:mt-3">
       <div className="flex-1 flex justify-start pr-32">
         <ul className="flex space-x-16">
           <li>
