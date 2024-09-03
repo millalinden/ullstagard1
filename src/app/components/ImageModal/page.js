@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import CloseButton from "../CloseBtn/page";
 
 export default function ImageModal({
   images,
@@ -12,12 +12,10 @@ export default function ImageModal({
   return (
     selectedImage && (
       <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-95 lg:bg-opacity-75 backdrop-blur-lg w-screen">
-        <button
-          className="absolute top-6 right-6 lg:top-5 lg:right-5 py-1 px-2.5 lg:hover:rotate-90 lg:duration-300 lg:transition-all text-xl text-white font-bold"
+        <CloseButton
+          className="absolute top-6 right-6 lg:top-5 lg:right-5 py-1 px-2.5 text-xl text-white uppercase border-white"
           onClick={onClose}
-        >
-          &#10005;
-        </button>
+        />
         <div className="relative flex flex-col lg:flex-row items-center">
           <button
             className="hidden lg:block text-white text-3xl md:text-5xl hover:text-zinc-300 lg:hover:-translate-x-1 lg:duration-300 lg:ease-in-out lg:mr-4"

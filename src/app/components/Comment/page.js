@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import useContentful from "@/app/utils/useContentful";
 export default function Comment() {
@@ -21,7 +22,7 @@ export default function Comment() {
       {comments.map((comment, index) => (
         <div key={index} className="lg:w-2/4">
           <p className="font-erode lg:text-[1.5vw] italic">
-          "{comment.comment}"
+            "{comment.comment}"
           </p>
           <div className="lg:flex ">
             <p className="font-medium mt-1 font-satoshi lg:text-[1vw] lg:pr-1 text-[#474747] lg:text-left">
