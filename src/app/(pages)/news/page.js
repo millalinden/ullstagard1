@@ -33,7 +33,7 @@ export default function News() {
               <hr className="border-black lg:border-black" />
               <p className="font-erode text-[3.5vw] py-1 lg:text-[1vw]">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the industrys standard dummy
                 text ever since the 1500s.
               </p>
             </div>

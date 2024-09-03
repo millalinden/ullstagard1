@@ -1,6 +1,6 @@
 // Hook for managing interactions with Contentful - it fetches and renders the different types of content
 
-
+import Image from "next/image";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
@@ -69,10 +69,16 @@ export default function useContentful() {
       renderNode: {
         "embedded-asset-block": (node) => {
           const { file, title } = node.data.target.fields;
-          const imageUrl = file.url.startsWith("//") ? `https:${file.url}` : file.url;
+          const imageUrl = file.url.startsWith("//")
+            ? `https:${file.url}`
+            : file.url;
           return (
             <div className="mb-4 w-full h-64 overflow-hidden">
-              <img className="w-full h-full object-cover" src={imageUrl} alt={title} />
+              <Image
+                className="w-full h-full object-cover"
+                src={imageUrl}
+                alt={title}
+              />
             </div>
           );
         },
@@ -82,7 +88,7 @@ export default function useContentful() {
       },
     });
   };
-  
+
   async function getGuestbookComment() {
     try {
       const entries = await client.getEntries({
