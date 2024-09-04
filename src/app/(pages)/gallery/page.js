@@ -67,7 +67,7 @@ function Gallery() {
 
   return (
     <Layout>
-      <section className="flex gap-2 justify-start mx-5 flex-wrap mt-28 lg:mt-32 lg:gap-4 ">
+      <section className="flex gap-2 justify-start mx-5 flex-wrap mt-24 lg:mt-32 lg:gap-4 ">
         <FilterButton onClick={() => handleTagClick("Alla")} className="uppercase font-medium">
           Alla
         </FilterButton>
