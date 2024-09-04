@@ -45,12 +45,12 @@ function HomePage() {
 
   return (
     <Layout>
-      <section className="mt-24 lg:mb-16 ">
+      <section className="mt-32 lg:mb-16 ">
         <div className="mb-10 lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col md:items-center">
-          <h1 className="hidden flex flex-col items-center mt-24 pb-2 text-[13vw] font-[900] uppercase text-blueberry tracking-wide lg:text-[13vw]">
+          <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw]">
             Ullsta Gård
           </h1>
-          <div className="h-full mx-3 lg:ml-10 lg:w-2/4 lg:h-96 lg:overflow-hidden">
+          <div className="h-full mx-3 lg:w-2/5 lg:h-96 lg:overflow-hidden">
             <Image
               src="/images/frontt.jpeg"
               alt="Front view of Ullsta Gård"

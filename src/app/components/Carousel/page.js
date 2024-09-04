@@ -1,4 +1,4 @@
-// components/CarouselContainer.js
+"use client";
 import Slider from "react-slick";
 import React from "react";
 import "slick-carousel/slick/slick.css";
