@@ -33,7 +33,7 @@
 }
 .input {
   outline: none; /* Removes outline when focused */
-  background-color: #FAF7F2; /* Background color */
+  background-color: #FAF6EA; /* Background color */
   border-bottom: 1px solid #302A36; /* Bottom border color */
   font-family: "Satoshi", sans-serif; /* Font family */
   font-size: 4vw; /* Font size for mobile */
