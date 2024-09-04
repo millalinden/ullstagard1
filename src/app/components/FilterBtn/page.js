@@ -3,7 +3,7 @@ export default function FilterButton({ onClick, children, className = "" }) {
     return (
       <button
         onClick={onClick}
-        className={`relative overflow-hidden border border-blueberry rounded-xl px-4 py-2 leading-none font-regular text-blueberry tracking-wide text-[3.5vw] md:text-[1.5vw] lg:text-[0.9vw] transition-all duration-300 ${className} group`}
+        className={`relative font-cabinet overflow-hidden border border-blueberry rounded-xl px-4 py-2 leading-none font-regular text-blueberry tracking-wide text-[3.5vw] md:text-[1.5vw] lg:text-[0.9vw] transition-all duration-300 ${className} group`}
         aria-label={typeof children === "string" ? children : "Filter button"}
       >
         {/* Initial text, moves up on hover */}

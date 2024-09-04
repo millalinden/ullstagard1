@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 
-
 export default function Accordion({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,16 +10,16 @@ export default function Accordion({ title, content }) {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex font-cabinet">
         <button
-          className="playfair text-[16px] pr-3 "
+          className="text-[5.5vw] font-cabinet text-blueberry pr-1 lg:text-[1vw]"
           onClick={toggleAccordion}
         >
           {title}
         </button>
         <div className="flex items-center">
           <svg
-            className={`transform transition-transform duration-500 ${
+            className={`text-[6vw] text-blueberry transform transition-transform duration-500 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
             width="12"
@@ -38,8 +37,8 @@ export default function Accordion({ title, content }) {
       </div>
       {isOpen && (
         <div
-          className={`transition-all duration-1000 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          className={`transition-all duration-1000 ease-in-out overflow-hidden text-[5vw] font-cabinet text-blueberry  ${
+            isOpen ? "max-h-screen opacity-100" : "max-h-screen opacity-0"
           }`}
         >
           <hr className="border-black my-1" />
