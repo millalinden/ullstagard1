@@ -6,14 +6,15 @@ import {
 } from "react-icons/hi2";
 
 export default function ImageModal({
-  images,
+  images = [], // Default to an empty array
   selectedImage,
   onClose,
   onNext,
   onPrev,
-  selectedIndex,
+  selectedIndex = 0, // Default to 0
 }) {
-  const image = images[selectedIndex]; // Get the current image object from the index
+  // Ensure selectedIndex is within bounds
+  const image = images[selectedIndex] || {}; // Fallback to an empty object if undefined
 
   return (
     selectedImage && (
@@ -21,11 +22,11 @@ export default function ImageModal({
         <CloseButton
           className="absolute top-6 right-6 lg:top-5 lg:right-5 text-white"
           onClick={onClose}
-        ></CloseButton>
+        />
         <div className="relative flex flex-col lg:flex-row items-center">
           <button
             className="hidden lg:flex text-white border border-white rounded-full h-10 w-10 lg:items-center lg:justify-center md:h-12 md:w-12 lg:h-11 lg:w-11 hover:text-zinc-300 lg:hover:-translate-x-1 lg:duration-300 lg:ease-in-out lg:mr-4"
-            onClick={onNext}
+            onClick={onPrev} // Fixed this to be onPrev for the left arrow
           >
             <HiOutlineArrowLongLeft size={24} />
           </button>
@@ -53,7 +54,7 @@ export default function ImageModal({
           <div className="flex gap-10 mt-3 lg:hidden">
             <button
               className="flex text-white border border-white rounded-full h-9 w-9 items-center justify-center hover:text-zinc-300 lg:hover:-translate-x-1 lg:duration-300 lg:ease-in-out"
-              onClick={onNext}
+              onClick={onPrev} // Fixed this to be onPrev for the left arrow
             >
               <HiOutlineArrowLongLeft size={24} />
             </button>
