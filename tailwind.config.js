@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         erode: ["var(--font-erode)"],
         satoshi: ["var(--font-satoshi)"],
+        cabinet: ["var(--font-cabinet)"],
       },
       colors: {
         blueberry: "#302A36",

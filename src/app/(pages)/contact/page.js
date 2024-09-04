@@ -1,33 +1,48 @@
 import Layout from "../../components/Header/layout";
+import Image from "next/image";
 import Accordion from "../../components/Accordion/accordion";
 
 export default function Contact() {
   return (
     <Layout>
-      <section className="flex items-start justify-center lg:mt-52 lg:space-x-52 ml-32">
-        <div className="flex-shrink-0">
-          <h2 className="lg:uppercase lg:text-blueberry lg:font-regular lg:tracking-widest lg:text-[1.1vw] pt-2">
-            Hitta Hit
-          </h2>
-        </div>
-        <div className="ml-4 flex-1">
-          <p className="lg:font-erode lg:font-thin lg:text-[4vw] lg:text-blueberry lg:leading-none lg:w-5/6">
-            Ullsta Gård ligger vackert beläget mellan två sjöar i Sörmland.
-            Vänligen se nedan för vägbeskrivningar och information om hur du
-            lättast hittar till oss.
-          </p>
+      <section className="flex flex-col items-start justify-center w-screen h-screen">
+        <div className="flex items-start justify-center lg:space-x-52 ml-32">
+          <div className="flex-shrink-0">
+            <h2 className="lg:uppercase lg:text-blueberry lg:font-regular lg:tracking-widest lg:text-[1.5vw] pt-2">
+              Hitta Hit
+            </h2>
+          </div>
+          <div className="ml-4 flex-1">
+            <p className="lg:font-erode lg:font-thin lg:text-[3vw] lg:text-blueberry lg:leading-none lg:w-5/6">
+              Ullsta Gård ligger vackert beläget mellan två sjöar i Sörmland.
+              Vänligen se nedan för vägbeskrivningar och information om hur du
+              lättast hittar till oss.
+            </p>
+          </div>
         </div>
       </section>
-      <section className="flex items-start justify-center lg:mt-52 lg:space-x-52 ml-32">
-        <div className="flex-shrink-0">
-          <h2 className="lg:uppercase lg:text-blueberry lg:font-regular lg:tracking-widest lg:text-[1.1vw] pt-2">
-            Adress
-          </h2>
-        </div>
-        <div className="ml-4 flex-1">
-          <p className="lg:font-erode lg:font-thin lg:text-[4vw] lg:text-blueberry lg:leading-none lg:w-5/6">
-          Gåsinge-Ullsta Stora Huset 646 91 Gnesta Sweden
-          </p>
+
+      <div className="ml-10 w-2/4 h-96 overflow-hidden">
+        <Image
+          className="w-full h-full object-cover object-bottom"
+          src="/images/IMG_0577.jpeg"
+          width={3024}
+          height={3024}
+        />
+      </div>
+
+      <section className="flex items-center justify-center w-screen h-screen ">
+        <div className="flex items-start justify-center lg:space-x-52 ml-32">
+          <div className="flex-shrink-0">
+            <h2 className="lg:uppercase lg:text-blueberry lg:font-regular lg:tracking-widest lg:text-[1.5vw] pt-2">
+              Adress{" "}
+            </h2>
+          </div>
+          <div className="ml-4 flex-1">
+            <p className="lg:font-erode lg:font-thin lg:text-[3vw] lg:text-blueberry lg:leading-none lg:w-5/6">
+              Gåsinge-Ullsta Stora Huset 646 91 Gnesta Sweden
+            </p>
+          </div>
         </div>
       </section>
 

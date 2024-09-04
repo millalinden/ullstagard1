@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --font-erode: "Erode", sans-serif;
   --font-satoshi: "Satoshi", sans-serif;
+  --font-cabinet: "Cabinet", sans-serif;
 }
 
 @layer utilities {
@@ -58,4 +60,15 @@
   .overflow-hidden {
     overflow: hidden;
   }
+}
+
+.slick-dots li button:before {
+  color: #302A36 !important; /* Change bullet color */
+  font-size: 20px;
+
+}
+
+.slick-dots .slick-active button:before {
+  color: #302a36 !important; /* Change active bullet color */
+  font-size: 10px
 }

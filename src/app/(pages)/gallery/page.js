@@ -68,19 +68,19 @@ function Gallery() {
   return (
     <Layout>
       <section className="flex gap-2 justify-start mx-5 flex-wrap mt-28 lg:mt-32 lg:gap-4 ">
-        <FilterButton onClick={() => handleTagClick("Alla")} className="uppercase">
+        <FilterButton onClick={() => handleTagClick("Alla")} className="uppercase font-medium">
           Alla
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("Var")} className="uppercase">
+        <FilterButton onClick={() => handleTagClick("Var")} className="uppercase font-medium">
           Vår
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("sommar")} className="uppercase">
+        <FilterButton onClick={() => handleTagClick("sommar")} className="uppercase font-medium">
           Sommar
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("Host")} className="uppercase">
+        <FilterButton onClick={() => handleTagClick("Host")} className="uppercase font-medium">
           Höst
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("vinter")} className="uppercase">
+        <FilterButton onClick={() => handleTagClick("vinter")} className="uppercase font-medium">
           Vinter
         </FilterButton>
       </section>

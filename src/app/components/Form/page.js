@@ -1,7 +1,8 @@
 "use client";
 import useGuestbookForm from "@/app/utils/useGuestbookForm";
 import React, { useState } from "react";
-import { IoCloseOutline } from "react-icons/io5";
+import CloseButton from "../CloseBtn/page";
+import Button from "../Button/page";
 
 export default function Form({ children, closeForm }) {
   const {
@@ -32,13 +33,12 @@ export default function Form({ children, closeForm }) {
       className="text-blueberry w-full max-h-[35.5rem] bg-[#FAF7F2] p-14 lg:max-h-[40rem] overflow-hidden py-20"
       onSubmit={handleSubmit} // Use the custom submit handler
     >
-      <button
+      <CloseButton
         type="button"
         onClick={closeForm}
-        className="absolute top-10 right-10 text-blueberry text-2xl"
+        className="absolute top-8 right-8 text-blueberry border border-blueberry"
       >
-        <IoCloseOutline />
-      </button>
+      </CloseButton>
       <h2 className="font-satoshi text-blueberry text-[4vw] pb-10 lg:text-[2vw]">
         Dela gärna en mening om ditt besök!
       </h2>
@@ -56,7 +56,7 @@ export default function Form({ children, closeForm }) {
           <div className="flex flex-col mb-6 lg:mb-0 lg:w-[23rem]">
             <label
               htmlFor="firstName"
-              className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
+              className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
             >
               Förnamn
             </label>
@@ -74,7 +74,7 @@ export default function Form({ children, closeForm }) {
           <div className="flex flex-col mb-6 lg:w-[23rem]">
             <label
               htmlFor="lastName"
-              className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
+              className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
             >
               Efternamn
             </label>
@@ -93,7 +93,7 @@ export default function Form({ children, closeForm }) {
         <div className="flex flex-col lg:w-[47rem]">
           <label
             htmlFor="comment"
-            className="uppercase font-satoshi font-regular tracking-wide text-[3vw] lg:text-[1vw]"
+            className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
           >
             Kommentar
           </label>
@@ -107,12 +107,12 @@ export default function Form({ children, closeForm }) {
           />
           {/* Submit Button */}
           <div className="absolute bottom-10 right-12 ">
-            <button
+            <Button
               type="submit"
-              className="uppercase font-satoshi text-[3vw] cursor-pointer lg:text-[1vw] hover:bg-black px-4 py-2 hover:text-[#FAF7F2]"
+              className="uppercase tracking-widest font-satoshi text-[3vw] cursor-pointer lg:text-[1vw] px-4 py-2"
             >
               Publicera
-            </button>
+            </Button>
           </div>
         </div>
       </div>

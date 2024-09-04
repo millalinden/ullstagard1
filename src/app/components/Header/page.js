@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`w-full flex justify-between items-end fixed pr-5 lg:px-5 py-5 top-0 bg-offwhite lg:bg-opacity-80 lg:backdrop-blur-xl z-40 transition-transform duration-300 ${
+        className={`w-full flex justify-between items-end fixed pr-5 lg:px-5 py-3 lg:py-5 top-0 bg-offwhite lg:bg-opacity-60 lg:backdrop-blur-xl z-40 transition-transform duration-300 ${
           isHeaderVisible
             ? "transform translate-y-0"
             : "transform -translate-y-full"
@@ -69,11 +69,12 @@ export default function Header() {
         </div>
         {/* Desktop Menu (Horizontal Menu) */}
         <div className="hidden lg:block lg:leading-none	">
-          <NavBar className=""/>
+          <NavBar className="" />
         </div>
       </header>
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} />
+
     </>
   );
 }
