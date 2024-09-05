@@ -43,7 +43,7 @@ export default function Sidebar({ isOpen }) {
 
   const links = [
     { href: "/", text: "Hem", number: "01" },
-    { href: "/history", text: "Historik", number: "02" },
+    { href: "/history", text: "Historia", number: "02" },
     { href: "/contact", text: "Hitta Hit", number: "03" },
     { href: "/gallery", text: "Bildgalleri", number: "04" },
   ];

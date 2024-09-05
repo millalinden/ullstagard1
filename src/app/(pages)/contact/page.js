@@ -57,7 +57,7 @@ export default function Contact() {
               </div>
               <div className="ml-4 flex-1">
                 <p className="text-[6vw] leading-tight text-blueberry lg:text-[1vw] lg:w-5/8">
-                  Från Stockholm Central ta pendeltåget till Gnesta via
+                  Från Stockholm Central ta pendeltåget eller Mälartåget till Gnesta via
                   Södertälje Hamn. Det går att ta buss till Ullsta från Gnesta
                   med Sörmlandstrafiken. Hållplatsen heter Ullsta
                   Gåsinge-Dillnäs.

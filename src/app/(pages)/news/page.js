@@ -15,7 +15,13 @@ export default function News() {
     const fetchNewsPosts = async () => {
       try {
         const newsPostsData = await getNewsPosts();
-        setAllNewsPosts(newsPostsData);
+        
+        // Sort news posts by date, with latest posts at the top
+        const sortedNewsPosts = newsPostsData.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
+        
+        setAllNewsPosts(sortedNewsPosts);
       } catch (error) {
         console.error("Error fetching newsPosts:", error);
       }

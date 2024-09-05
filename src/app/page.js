@@ -27,20 +27,23 @@ function HomePage() {
     const fetchNewsPosts = async () => {
       try {
         const newsPostsData = await getNewsPosts();
-        setAllNewsPosts(newsPostsData);
+        // Sort the posts by date in descending order (latest post first)
+        const sortedNewsPosts = newsPostsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+        setAllNewsPosts(sortedNewsPosts);
         updateDisplayedNewsPosts();
       } catch (error) {
         console.error("Error fetching newsPosts:", error);
       }
     };
-
+  
     fetchNewsPosts();
     window.addEventListener("resize", updateDisplayedNewsPosts);
-
+  
     return () => {
       window.removeEventListener("resize", updateDisplayedNewsPosts);
     };
   }, [getNewsPosts, updateDisplayedNewsPosts]);
+  
 
   return (
     <Layout>
@@ -60,7 +63,7 @@ function HomePage() {
             />
           </div>
         </div>
-        <p className="px-3 pb-14 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-3 lg:leading-normal">
+        <p className="px-3 pb-10 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-3 lg:leading-normal">
           Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred
           i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927
           och är idag en viktig del i familjens fritid med perfekt närhet till
@@ -69,19 +72,19 @@ function HomePage() {
       </section>
 
       {/* Image section */}
-      <section className="mb-16">
+      <section className="mb-10">
         <div className="flex flex-col lg:flex-row">
-          <div className="h-40 w-3/4 mb-3 overflow-hidden lg:h-full lg:w-3/2 lg:ml-5">
+          <div className="h-full w-full mb-3 overflow-hidden lg:h-full lg:w-3/2 lg:ml-5">
             <Image
               src="/images/lasmar.jpg"
               width={600}
               height={600}
               alt="Side view of Ullsta"
-              className="pl-3 w-full h-full object-cover"
+              className="px-3 w-full h-full object-cover"
             />
           </div>
 
-          <div className="flex justify-end items-end h-full w-full overflow-hidden lg:mt-[-100px]">
+          {/* <div className="flex justify-end items-end h-full w-full overflow-hidden lg:mt-[-100px]">
             <div className="mx-8 w-2/4 lg:w-2/4 lg:max-w-sm lg:overflow-hidden lg:mr-20">
               <Image
                 src="/images/tornrum.jpeg"
@@ -91,13 +94,13 @@ function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <hr className="hidden border-black mx-5 lg:mb-10 lg:mx-20 lg:block" />
       <section className="lg:flex font-cabinet w-full">
-        <h2 className="font-cabinet pb-1 font-black text-[7vw] tracking-[3%] text-blueberry mx-5 text-wrap md:text-[3vw] md:ml-14 lg:text-[3vw] lg:ml-20">
+        <h2 className="font-cabinet pb-1 font-black text-[8vw] tracking-[3%] text-blueberry mx-4 text-wrap md:text-[3vw] md:ml-14 lg:text-[3vw] lg:ml-20">
           Senaste händelserna
         </h2>
         <section className="mb-3 grid grid-cols-1 lg:gap-y-6 lg:grid-cols-2 lg:pl-48 lg:px-20 lg:gap-x-12 lg:mb-10 w-full">
@@ -133,8 +136,8 @@ function HomePage() {
 
       <section className="flex flex-col lg:mb-10 ">
         {/* White background container for the heading */}
-        <div className="mx-2 leading-none bg-[#FFFDFA] lg:h-full lg:items-center lg:justify-center">
-          <h2 className="text-[17vw] uppercase font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap lg:mx-16">
+        <div className="mx-3 leading-none bg-[#FFFDFA] lg:h-full lg:items-center lg:justify-center">
+          <h2 className="mb-5 text-[8vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap lg:mx-16">
             Läs mer
           </h2>
         </div>
@@ -145,7 +148,7 @@ function HomePage() {
             <Link href="/history">
               <Card
                 src="/images/landscape.jpeg"
-                title="Historik"
+                title="Historia"
                 description="Husets historia & Familjen Lindén"
                 className="lg:w-[500px]"
               />

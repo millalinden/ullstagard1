@@ -55,7 +55,7 @@ export default function Header() {
             >
               <Image
                 src="/icons/ullsta1.svg"
-                alt="Sketched Image of Ullsta Gard"
+                alt="Sketched Image of Ullsta Gard by Olle Qvennerstedt"
                 width={90}
                 height={90}
                 className=""

@@ -7,7 +7,7 @@ export default function NavBar() {
       <div className="flex-1 flex justify-start pr-52">
         <ul className="flex space-x-16">
           <li>
-            <NavLink href="/">Historik</NavLink>
+            <NavLink href="/">Historia</NavLink>
           </li>
           <li>
             <NavLink href="/gallery">Bildgalleri</NavLink>
