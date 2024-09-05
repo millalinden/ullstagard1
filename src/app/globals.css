@@ -33,7 +33,7 @@
 }
 .input {
   outline: none; /* Removes outline when focused */
-  background-color: #FAF6EA; /* Background color */
+  background-color: #CBD0D4; /* Background color */
   border-bottom: 1px solid #302A36; /* Bottom border color */
   font-family: "Satoshi", sans-serif; /* Font family */
   font-size: 4vw; /* Font size for mobile */
@@ -72,3 +72,4 @@
   color: #302a36 !important; /* Change active bullet color */
   font-size: 10px
 }
+

@@ -67,27 +67,26 @@ export default function useContentful() {
   const renderRichTextDocument = (document) => {
     return documentToReactComponents(document, {
       renderNode: {
-        "embedded-asset-block": (node) => {
+        'embedded-asset-block': (node) => {
           const { file, title } = node.data.target.fields;
-          const imageUrl = file.url.startsWith("//")
-            ? `https:${file.url}`
-            : file.url;
+          const imageUrl = file.url.startsWith('//') ? `https:${file.url}` : file.url;
           return (
-            <div className="mb-4 w-full h-64 overflow-hidden">
+            <div className="mb-4 w-full h-full overflow-hidden">
               <Image
                 className="w-full h-full object-cover"
                 src={imageUrl}
                 alt={title}
+                width={500}
+                height={500}
               />
             </div>
           );
         },
-        paragraph: (node, children) => {
-          return <p className="mb-4">{children}</p>;
-        },
+        paragraph: (node, children) => <p className="mb-4">{children}</p>,
       },
     });
   };
+  
 
   async function getGuestbookComment() {
     try {

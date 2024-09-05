@@ -1,14 +1,13 @@
 "use client";
 
 import Layout from "./components/Header/layout";
-import Link from "next/link";
 import Image from "next/image";
 import useContentful from "./utils/useContentful";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import React, { useEffect, useState, useCallback } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import CarouselContainer from "./components/Carousel/page";
-
+import Card from "./components/Card/page";
+import Link from "next/link";
 
 function HomePage() {
   const { getNewsPosts } = useContentful();
@@ -45,7 +44,7 @@ function HomePage() {
 
   return (
     <Layout>
-      <section className="mt-32 lg:mb-16 ">
+      <section className="mt-24 lg:mb-16 lg:mt-32 ">
         <div className="mb-10 lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col md:items-center">
           <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw]">
             Ullsta Gård
@@ -61,7 +60,7 @@ function HomePage() {
             />
           </div>
         </div>
-        <p className="px-3 pb-14 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-20 lg:leading-normal">
+        <p className="px-3 pb-14 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[2.5vw] md:mx-10 lg:text-[2.5vw] lg:mx-3 lg:leading-normal">
           Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred
           i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927
           och är idag en viktig del i familjens fritid med perfekt närhet till
@@ -70,26 +69,28 @@ function HomePage() {
       </section>
 
       {/* Image section */}
-      <section className="mb-16 ">
-        <div className="h-40 w-3/4 mb-3 overflow-hidden">
-          <Image
-            src="/images/lasmar.jpg"
-            width={600}
-            height={600}
-            alt="Side view of Ullsta"
-            className="pl-3 w-full h-full object-cover"
-          />
-        </div>
-        <div className="flex justify-end items-end h-full w-full overflow-hidden">
-          <div className=" mx-8 w-2/4">
+      <section className="mb-16">
+        <div className="flex flex-col lg:flex-row">
+          <div className="h-40 w-3/4 mb-3 overflow-hidden lg:h-full lg:w-3/2 lg:ml-5">
             <Image
-              src="/images/tornrum.jpeg"
+              src="/images/lasmar.jpg"
               width={600}
               height={600}
-              alt="View from Tornrummet"
-
-              className="w-full h-full object-cover"
+              alt="Side view of Ullsta"
+              className="pl-3 w-full h-full object-cover"
             />
+          </div>
+
+          <div className="flex justify-end items-end h-full w-full overflow-hidden lg:mt-[-100px]">
+            <div className="mx-8 w-2/4 lg:w-2/4 lg:max-w-sm lg:overflow-hidden lg:mr-20">
+              <Image
+                src="/images/tornrum.jpeg"
+                width={600}
+                height={600}
+                alt="View from Tornrummet"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -130,17 +131,46 @@ function HomePage() {
       </div>
       <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-20" />
 
-      <section className="flex flex-col lg:mb-10 lg:flex-row lg:relative">
+      <section className="flex flex-col lg:mb-10 ">
         {/* White background container for the heading */}
-        <div className="mx-2 leading-none bg-[#FFFDFA] lg:w-2/5 lg:py-4 lg:px-8 lg:sticky lg:top-0 lg:h-full lg:items-center lg:justify-center">
-          <h2 className="text-[17vw] uppercase font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap">
+        <div className="mx-2 leading-none bg-[#FFFDFA] lg:h-full lg:items-center lg:justify-center">
+          <h2 className="text-[17vw] uppercase font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap lg:mx-16">
             Läs mer
           </h2>
         </div>
 
         {/* Scrollable container for the cards */}
         <div>
-          <CarouselContainer />
+          <div>
+            <Link href="/history">
+              <Card
+                src="/images/landscape.jpeg"
+                title="Historik"
+                description="Husets historia & Familjen Lindén"
+                className="lg:w-[500px]"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link href="/news">
+              <Card
+                src="/images/forsnacks.jpeg"
+                title="Nyheter"
+                description="Uppdatera dig om det senaste"
+                className="lg:w-[500px]"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link href="/guestbook">
+              <Card
+                src="/images/gularummet.jpeg"
+                title="Gästbok"
+                description="Läs om minnen & dela dina!"
+                className="lg:w-[500px]"
+              />
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

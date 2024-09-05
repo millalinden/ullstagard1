@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const extractImage = (document) => {
