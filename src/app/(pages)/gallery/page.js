@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useContentful from "../../utils/useContentful";
@@ -67,24 +67,39 @@ function Gallery() {
 
   return (
     <Layout>
-      <section className="flex gap-2 justify-start mx-5 flex-wrap mt-24 lg:mt-32 lg:gap-4 ">
-        <FilterButton onClick={() => handleTagClick("Alla")} className="uppercase font-medium">
+      <section className="flex gap-2 justify-start mx-5 flex-wrap mt-24 lg:mt-32 lg:gap-4">
+        <FilterButton
+          onClick={() => handleTagClick("Alla")}
+          className={`uppercase font-medium ${selectedTag === "Alla" ? "bg-blueberry text-white" : ""}`}
+        >
           Alla
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("Var")} className="uppercase font-medium">
+        <FilterButton
+          onClick={() => handleTagClick("Var")}
+          className={`uppercase font-medium ${selectedTag === "Var" ? "bg-blueberry text-white" : ""}`}
+        >
           Vår
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("sommar")} className="uppercase font-medium">
+        <FilterButton
+          onClick={() => handleTagClick("sommar")}
+          className={`uppercase font-medium ${selectedTag === "sommar" ? "bg-blueberry text-white" : ""}`}
+        >
           Sommar
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("Host")} className="uppercase font-medium">
+        <FilterButton
+          onClick={() => handleTagClick("Host")}
+          className={`uppercase font-medium ${selectedTag === "Host" ? "bg-blueberry text-white" : ""}`}
+        >
           Höst
         </FilterButton>
-        <FilterButton onClick={() => handleTagClick("vinter")} className="uppercase font-medium">
+        <FilterButton
+          onClick={() => handleTagClick("vinter")}
+          className={`uppercase font-medium ${selectedTag === "vinter" ? "bg-blueberry text-white" : ""}`}
+        >
           Vinter
         </FilterButton>
       </section>
-      <hr className="border-black mx-5 mt-3 lg:mt-5"/>
+      <hr className="border-black mx-5 mt-3 lg:mt-5" />
       <section className="mt-3 lg:mt-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
           {filteredImages.map((image, index) => (
