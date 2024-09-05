@@ -15,7 +15,7 @@ export default function Contact() {
             alt="View over fields and Nyckelsjön"
           />
         </div>
-        <wrapper className="lg:flex-col">
+        <section className="lg:flex-col">
           <section className="mb-16 font-cabinet flex flex-col items-start lg:mt-48 lg:justify-start lg:items-end ">
             <div className="flex items-start justify-center space-x-12 mx-4 lg:mx-3 lg:space-x-20 lg:justify-end">
               <div className="flex-shrink-0">
@@ -94,7 +94,7 @@ export default function Contact() {
               </div>
             </div>
           </section>
-        </wrapper>
+        </section>
       </section>
       <section className="mx-4 mb-10 lg:hidden">
         <Accordion
