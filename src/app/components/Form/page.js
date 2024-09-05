@@ -1,8 +1,9 @@
 "use client";
 import useGuestbookForm from "@/app/utils/useGuestbookForm";
 import React, { useState } from "react";
-import CloseButton from "../CloseBtn/page";
 import Button from "../Button/page";
+import { IoCloseOutline } from "react-icons/io5";
+
 
 export default function Form({ children, closeForm }) {
   const {
@@ -30,23 +31,24 @@ export default function Form({ children, closeForm }) {
 
   return (
     <form
-      className="text-blueberry w-full max-h-[35.5rem] bg-[#FAF7F2] p-14 lg:max-h-[40rem] overflow-hidden py-20"
+      className="py-24 text-blueberry w-full h-screen bg-[#CBD0D4] px-10 lg:max-h-[40rem] overflow-hidden"
       onSubmit={handleSubmit} // Use the custom submit handler
     >
-      <CloseButton
+      <button
         type="button"
         onClick={closeForm}
-        className="absolute top-8 right-8 text-blueberry border border-blueberry"
+        className="absolute top-8 right-8 text-blueberry border-none"
       >
-      </CloseButton>
-      <h2 className="font-satoshi text-blueberry text-[4vw] pb-10 lg:text-[2vw]">
+        <IoCloseOutline size={25}/>
+      </button>
+      <h2 className="font-cabinet text-blueberry text-[6vw] pb-10 lg:text-[2vw]">
         Dela gärna en mening om ditt besök!
       </h2>
 
-      {/* Display success message */}
+      {/* Display success message
       {successMessage && (
         <div className="text-green-500 mb-4">{successMessage}</div>
-      )}
+      )} */}
 
       {/* Container for Inputs - Aligns inputs to the right on desktop */}
       <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 lg:pb-10">
@@ -56,7 +58,7 @@ export default function Form({ children, closeForm }) {
           <div className="flex flex-col mb-6 lg:mb-0 lg:w-[23rem]">
             <label
               htmlFor="firstName"
-              className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
+              className="uppercase font-cabinet font-regular tracking-widest leading-none text-[4vw] lg:text-[1vw]"
             >
               Förnamn
             </label>
@@ -66,7 +68,7 @@ export default function Form({ children, closeForm }) {
               name="firstName"
               value={firstName}
               onChange={handleChange}
-              className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
+              className="input focus:outline-none bg-[#FAF6EA] border-blueberry border-b font-cabinet text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
             />
           </div>
 
@@ -74,7 +76,7 @@ export default function Form({ children, closeForm }) {
           <div className="flex flex-col mb-6 lg:w-[23rem]">
             <label
               htmlFor="lastName"
-              className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
+              className="uppercase font-cabinet font-regular tracking-widest text-[4vw] lg:text-[1vw]"
             >
               Efternamn
             </label>
@@ -84,7 +86,7 @@ export default function Form({ children, closeForm }) {
               name="lastName"
               value={lastName}
               onChange={handleChange}
-              className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
+              className="input focus:outline-none bg-[#FAF6EA] border-blueberry border-b font-cabinet text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
             />
           </div>
         </div>
@@ -93,7 +95,7 @@ export default function Form({ children, closeForm }) {
         <div className="flex flex-col lg:w-[47rem]">
           <label
             htmlFor="comment"
-            className="uppercase font-satoshi font-regular tracking-widest text-[3vw] lg:text-[1vw]"
+            className="uppercase font-cabinet font-regular tracking-widest text-[4vw] lg:text-[1vw]"
           >
             Kommentar
           </label>
@@ -103,13 +105,13 @@ export default function Form({ children, closeForm }) {
             name="comment"
             value={comment}
             onChange={handleChange}
-            className="input focus:outline-none bg-[#FAF7F2] border-blueberry border-b font-satoshi text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
+            className="input focus:outline-none bg-[#FAF6EA] border-blueberry border-b font-cabinet text-[4vw] pt-1 lg:text-[1vw] lg:w-full"
           />
           {/* Submit Button */}
-          <div className="absolute bottom-10 right-12 ">
+          <div className="absolute mt-36 right-10 ">
             <Button
               type="submit"
-              className="uppercase tracking-widest font-satoshi text-[3vw] cursor-pointer lg:text-[1vw] px-4 py-2"
+              className="uppercase border border-blueberry mt-5 tracking-widest font-cabinet text-[4vw] cursor-pointer lg:text-[1vw] px-4 py-3"
             >
               Publicera
             </Button>
