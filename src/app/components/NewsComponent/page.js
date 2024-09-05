@@ -7,10 +7,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const extractImage = (document) => {
+  if (!document) return null; // Handle empty or undefined documents
+
   let imageNode = null;
 
   documentToReactComponents(document, {
@@ -44,6 +45,8 @@ const extractImage = (document) => {
 };
 
 const renderDescriptionWithoutImage = (document) => {
+  if (!document) return null; // Handle empty or undefined documents
+
   return documentToReactComponents(document, {
     renderNode: {
       "embedded-asset-block": () => null,
@@ -52,6 +55,7 @@ const renderDescriptionWithoutImage = (document) => {
     },
   });
 };
+
 
 const NewsComponent = ({ post }) => {
   const newsRef = useRef();
@@ -69,12 +73,19 @@ const NewsComponent = ({ post }) => {
       },
     });
   }, []);
+
+  console.log("Post Data:", post); // Add this line to check the data
+
+  if (!post || !post.description) {
+    return null; // or return a fallback UI
+  }
+
   return (
     <div className="mb-5" ref={newsRef}>
       {/* Container for each news post */}
       <div className="flex flex-col">
         {/* Extract and render the image */}
-        <div className="">{extractImage(post.description)}</div>
+        <div>{extractImage(post.description)}</div>
 
         {/* Render the date */}
         <div className="flex items-center gap-8 mb-4">
