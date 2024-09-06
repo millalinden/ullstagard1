@@ -71,9 +71,9 @@ export default function useContentful() {
           const { file, title } = node.data.target.fields;
           const imageUrl = file.url.startsWith('//') ? `https:${file.url}` : file.url;
           return (
-            <div className="mb-4 w-full h-full overflow-hidden">
+            <div className="mb-4 w-full h-full overflow-hidden lg:h-[100px]">
               <Image
-                className="w-full h-full object-cover"
+                className="object-cover w-full h-full "
                 src={imageUrl}
                 alt={title}
                 width={500}

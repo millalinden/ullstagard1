@@ -29,11 +29,26 @@ export default function Header() {
       }
       setLastScrollPosition(currentScrollPosition);
     };
-    window.addEventListener("scroll", handleScroll);
 
-    // remove event listener
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768; // Check if the screen width is <= 768px (mobile)
+      if (isMobile) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    // Initialize scroll listener based on screen size
+    handleResize();
+
+    // Add resize listener to recheck screen size when the window is resized
+    window.addEventListener("resize", handleResize);
+
+    // Clean up scroll and resize listeners on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, [lastScrollPosition]);
 

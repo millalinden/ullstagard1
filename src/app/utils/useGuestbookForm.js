@@ -33,7 +33,7 @@ const useGuestbookForm = () => {
       }
 
       const result = await response.json();
-      console.log(result);
+    
 
       // Clear the form fields after successful submission
       setState(defaultState);

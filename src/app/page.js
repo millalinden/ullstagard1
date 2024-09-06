@@ -74,7 +74,7 @@ function HomePage() {
       {/* Image section */}
       <section className="mb-10">
         <div className="flex flex-col lg:flex-row">
-          <div className="h-full w-full mb-3 overflow-hidden lg:h-full lg:w-3/2 lg:ml-5">
+          <div className="h-full w-full mb-3 overflow-hidden lg:h-[500px] lg:w-[1000px] lg:ml-5">
             <Image
               src="/images/lasmar.jpg"
               width={600}
@@ -134,23 +134,23 @@ function HomePage() {
       </div>
       <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-20" />
 
-      <section className="flex flex-col lg:mb-10 ">
+      <section className="flex flex-col lg:mb-10 lg:mx-10 ">
         {/* White background container for the heading */}
         <div className="mx-3 leading-none bg-[#FFFDFA] lg:h-full lg:items-center lg:justify-center">
-          <h2 className="mb-5 text-[8vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap lg:mx-16">
+          <h2 className="mb-5 text-[8vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:whitespace-nowrap">
             Läs mer
           </h2>
         </div>
 
         {/* Scrollable container for the cards */}
-        <div>
-          <div>
+        <div className="lg:grid lg:grid-cols-3 lg:">
+          <div className="">
             <Link href="/history">
               <Card
                 src="/images/landscape.jpeg"
                 title="Historia"
                 description="Husets historia & Familjen Lindén"
-                className="lg:w-[500px]"
+                className=""
               />
             </Link>
           </div>
@@ -160,7 +160,7 @@ function HomePage() {
                 src="/images/forsnacks.jpeg"
                 title="Nyheter"
                 description="Uppdatera dig om det senaste"
-                className="lg:w-[500px]"
+                className=""
               />
             </Link>
           </div>
@@ -170,7 +170,7 @@ function HomePage() {
                 src="/images/gularummet.jpeg"
                 title="Gästbok"
                 description="Läs om minnen & dela dina!"
-                className="lg:w-[500px]"
+                className=""
               />
             </Link>
           </div>

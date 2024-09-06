@@ -25,7 +25,7 @@ export default function Comment() {
   }, [getGuestbookComment]);
 
   return (
-    <div className="flex flex-col items-center mx-3">
+    <div className="flex flex-col items-start mx-3">
       {comments.map((comment, index) => (
         <CommentItem key={index} comment={comment} />
       ))}
@@ -69,8 +69,8 @@ const CommentItem = ({ comment }) => {
   }, []);
 
   return (
-    <div ref={commentRef} className="lg:w-2/4 mb-16">
-      <p className="font-cabinet lg:text-[1.5vw] italic">{comment.comment}</p>
+    <div ref={commentRef} className="mb-16 lg:w-2/5 lg:flex lg:flex-col lg:items-start lg:border lg:border-blueberry lg:rounded-xl lg:p-3">
+      <p className="font-cabinet lg:text-[1vw] italic">{comment.comment}</p>
       <div className="flex">
         <p className="font-medium mt-1 font-cabinet pr-1 lg:text-[1vw] text-[#474747] lg:text-left">
           {comment.firstName}

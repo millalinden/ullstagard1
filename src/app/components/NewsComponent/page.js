@@ -74,7 +74,6 @@ const NewsComponent = ({ post }) => {
     });
   }, []);
 
-  console.log("Post Data:", post); // Add this line to check the data
 
   if (!post || !post.description) {
     return null; // or return a fallback UI
@@ -85,26 +84,26 @@ const NewsComponent = ({ post }) => {
       {/* Container for each news post */}
       <div className="flex flex-col">
         {/* Extract and render the image */}
-        <div>{extractImage(post.description)}</div>
+        <div className="md:h-80 lg:h-96 lg:pb-3">{extractImage(post.description)}</div>
 
         {/* Render the date */}
-        <div className="flex items-center gap-8 mb-4">
+        <div className="flex items-center gap-6 mb-4">
           {/* Render the title */}
-          <p className="uppercase text-[4.5vw] px-2 py-1 tracking-wide leading-none border border-blueberry rounded-full mt-1 font-cabinet lg:text-[1.6vw]">
+          <p className="uppercase text-[4.5vw] px-2 py-1 tracking-wide leading-none border border-blueberry rounded-full mt-1 font-cabinet md:text-[1.5vw] lg:text-[1vw]">
             Nyhet
           </p>
-          <p className="font-cabinet text-[4.5vw] font-medium text-blueberryLight lg:text-[1vw] mt-1">
+          <p className="font-cabinet text-[4.5vw] md:text-[2.5vw] font-medium text-blueberryLight lg:text-[1vw] mt-1">
             {new Date(post.date).toLocaleDateString()}
           </p>
         </div>
 
         {/* Render the title */}
-        <h4 className=" text-[7vw] tracking-wide leading-none rounded-full mt-1 font-cabinet lg:text-[1.6vw]">
+        <h4 className=" text-[7vw] tracking-wide leading-none rounded-full mt-1 font-cabinet md:text-[4vw] lg:text-[2vw]">
           {post.title}
         </h4>
 
         {/* Render the rest of the description without images */}
-        <div className="font-cabinet mt-4">
+        <div className="font-cabinet mt-4 lg:text-[1.3vw]">
           {renderDescriptionWithoutImage(post.description)}
         </div>
       </div>
