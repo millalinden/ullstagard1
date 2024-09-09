@@ -39,7 +39,7 @@ const useGuestbookForm = () => {
       setState(defaultState);
 
       // success message or any result from the response
-      return "Tack för din kommentar!";
+      return "Tack för din kommentar! Efter granskning och godkännande visas kommentaren i den digitala gästboken.";
     } catch (error) {
       console.error("Error submitting form:", error);
       // error message if submission fails
