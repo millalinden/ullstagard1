@@ -13,7 +13,7 @@ export default function Comment() {
     const fetchComments = async () => {
       try {
         const commentsData = await getGuestbookComment();
-        setComments(commentsData);
+        setComments(commentsData || []); // Ensure comments is always an array
       } catch (error) {
         console.error("Error fetching comments:", error);
       }
