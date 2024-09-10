@@ -49,21 +49,21 @@ function HomePage() {
     <Layout>
       <section className="mt-24 lg:mb-10 lg:mt-32 ">
         <div className="mb-10 lg:mb-5 lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col ">
-          <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw]">
+          <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw] lg:mb-8">
             Ullsta Gård
           </h1>
-          <div className="h-full mx-3 md:h-1/5 lg:w-2/5 lg:h-96 lg:overflow-hidden">
+          <div className="h-full mx-3 md:h-1/5 lg:w-screen lg:px-32	lg:h-[430px] lg:overflow-hidden">
             <Image
               src="/images/frontt.jpeg"
               alt="Front view of Ullsta Gård"
-              width={600}
-              height={337}
+              width={3000}
+              height={3000}
               priority
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover lg:object-center"
             />
           </div>
         </div>
-        <p className="px-3 pb-10 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[4vw] md:mx-3 lg:text-[2.5vw] lg:mx-3 lg:leading-normal">
+        <p className="px-3 pb-10 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[4vw] md:mx-3 lg:text-[3vw] lg:mx-16 lg:leading-normal">
           Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred
           i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927
           och är idag en viktig del i familjens fritid med perfekt närhet till
@@ -72,9 +72,9 @@ function HomePage() {
       </section>
 
       {/* Image section */}
-      <section className="mb-10">
+      <section className="lg:hidden mb-10">
         <div className="flex flex-col lg:flex-row">
-          <div className="h-full w-full mb-3 overflow-hidden lg:h-[500px] lg:w-[1000px] lg:ml-5">
+          <div className="h-full w-full mb-3 overflow-hidden lg:hidden lg:h-[500px] lg:w-[1000px] lg:ml-5">
             <Image
               src="/images/lasmar.jpg"
               width={600}
@@ -83,22 +83,10 @@ function HomePage() {
               className="px-3 w-full h-full object-cover"
             />
           </div>
-
-          {/* <div className="flex justify-end items-end h-full w-full overflow-hidden lg:mt-[-100px]">
-            <div className="mx-8 w-2/4 lg:w-2/4 lg:max-w-sm lg:overflow-hidden lg:mr-20">
-              <Image
-                src="/images/tornrum.jpeg"
-                width={600}
-                height={600}
-                alt="View from Tornrummet"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div> */}
         </div>
       </section>
 
-      <hr className="hidden border-black mx-5 lg:mb-10 lg:mx-20 lg:block" />
+      <hr className="hidden border-black mx-5 lg:mb-10 lg:mx-16 lg:block" />
       <section className="lg:flex font-cabinet w-full">
         <h2 className="font-cabinet pb-1 font-black text-[8vw] tracking-[3%] text-blueberry mx-4 text-wrap md:text-[4vw] md:ml-10 lg:text-[3vw] lg:ml-20">
           Senaste händelserna
@@ -132,18 +120,18 @@ function HomePage() {
           </button>
         </Link>
       </div>
-      <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-20" />
+      <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-16" />
 
       <section className="flex flex-col mb-10 lg:my-20">
         {/* White background container for the heading */}
         <div className="mx-3 leading-none bg-[#FFFDFA] md:mx-10 lg:h-full lg:items-center lg:justify-center">
-          <h2 className="mb-5 text-[10vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:mb-10 lg:whitespace-nowrap">
+          <h2 className="mb-5 text-[10vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:mb-10 lg:whitespace-nowrap lg:mx-10">
             Läs mer
           </h2>
         </div>
 
         {/* Scrollable container for the cards */}
-        <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 lg:mx-3 lg:gap-3">
+        <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 lg:mx-16 lg:gap-3">
           <div className="">
             <Link href="/history">
               <Card

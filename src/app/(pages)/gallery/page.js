@@ -128,7 +128,7 @@ function Gallery() {
         </button>
       </section>
 
-      <section className="mt-3 lg:mt-5">
+      <section className="mt-3 pb-10 lg:mt-5">
         <div
           className={`grid grid-cols-${gridCols} gap-3 mx-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 lg:mx-5`}
         >

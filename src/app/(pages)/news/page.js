@@ -49,11 +49,11 @@ export default function News() {
           </h2>
         </div>
         <section className="mb-5">
-          <p className="font-cabinet font-regular leading-[3rem] text-[15vw] text-blueberry mx-3 md:text-[4vw] lg:text-[3vw] lg:mb-8">
+          <p className="font-cabinet font-regular leading-[3rem] text-[15vw] text-blueberry mx-3 lg:mx-5 md:text-[4vw] lg:text-[4vw] lg:mb-8">
             Uppdatera dig om de senaste <i>nyheterna.</i>
           </p>
         </section>
-        <section className="flex gap-2 justify-start mx-3">
+        <section className="flex gap-2 justify-start mx-3 lg:mx-5">
           <FilterButton
             className={`uppercase font-medium ${
               selectedYear === "all" ? "bg-blueberry text-white" : ""

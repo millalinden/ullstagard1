@@ -69,9 +69,9 @@ const CommentItem = ({ comment }) => {
   }, []);
 
   return (
-    <div ref={commentRef} className="mb-16 lg:w-2/5 lg:flex lg:flex-col lg:items-start lg:border lg:border-blueberry lg:rounded-xl lg:p-3">
-      <p className="font-cabinet lg:text-[1vw] italic">{comment.comment}</p>
-      <div className="flex">
+    <div ref={commentRef} className="mb-16 lg:w-2/5 lg:flex lg:flex-col lg:items-start ">
+      <p className="font-cabinet lg:text-[1.5vw] italic">{comment.comment}</p>
+      <div className="flex items-end">
         <p className="font-medium mt-1 font-cabinet pr-1 lg:text-[1vw] text-[#474747] lg:text-left">
           {comment.firstName}
         </p>
