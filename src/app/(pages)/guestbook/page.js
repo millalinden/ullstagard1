@@ -46,7 +46,7 @@ export default function GuestBook() {
               <section className="relative z-10 lg:z-0 lg:w-screen   lg:flex lg:flex-col lg:items-center lg:justify-start">
                 <div
                   
-                  className="mt-16 mb-5 flex justify-start items-center mx-3 "
+                  className="mt-24 mb-5 flex justify-start items-center mx-3 "
                 >
                   <h2 className=" text-left font-satoshi font-medium tracking-wide uppercase text-blueberry/70 text-lg mb-5 lg:text-[1vw] lg:mx-3 leading-none lg:pt-20">
                     Ullsta Gård Gästbok
@@ -63,7 +63,7 @@ export default function GuestBook() {
                   <div className="absolute top-10 left-0 z-10 lg:z-0 lg:static lg:top-0 lg:left-0 lg:pt-10">
                     <Button
                       onClick={toggleFormVisibility}
-                      className=" mx-3 mt-1 border font-medium font-cabinet text-[3.5vw] md:text-[3vw] lg:text-[1.2vw] border lg:px-8 lg:py-4 lg:hover:bg-black lg:hover:text-offwhite"
+                      className=" mx-3 mt-1 border font-medium font-cabinet text-[4vw] md:text-[3vw] lg:text-[1.2vw] border lg:px-8 lg:py-4 lg:hover:bg-black lg:hover:text-offwhite"
                     >
                       Skriv en mening
                     </Button>
@@ -89,10 +89,10 @@ export default function GuestBook() {
         </section>
 
         <section className=" h-full mb-20">
-          <h3 className="font-cabinet text-[7vw] text-blueberry mx-3 mb-8 lg:flex lg:justify-center lg:text-[5vw] lg:mx-3 lg:mb-10">
+          <h3 className="font-cabinet font-medium text-[7vw] text-blueberry mx-3 my-8 lg:flex lg:justify-center lg:text-[5vw] lg:mx-3 lg:mb-10">
             Delade stunder & hälsningar
           </h3>
-          <div className="lg:mx-3 lg:flex lg:flex-row lg:gap-8 lg:justify-items-center">
+          <div className="lg:mx-3 lg:flex lg:flex-row lg:gap-8 lg:justify-items-center lg;flex-wrap">
             <Comment />
           </div>
         </section>

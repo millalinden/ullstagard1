@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Card({ src, description, alt, className, title }) {
   return (
     <section
-      className={`flex lg:flex-shrink-0 md:flex md:flex-col md:items-start lg:flex lg:flex-col lg:items-start lg:mx-0 ${className} font-cabinet mx-3 mb-3`}
+      className={`flex lg:flex-shrink-0 md:flex md:flex-col md:items-start lg:flex lg:flex-col lg:items-start lg:mx-0 ${className}  font-cabinet mx-3 mb-3`}
     >
       <div className=" w-full aspect-square h-32 md:w-full md:h-full md:aspect-square lg:w-full lg:h-full lg:relative lg:aspect-square overflow-hidden group">
         <Image

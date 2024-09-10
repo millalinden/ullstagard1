@@ -28,22 +28,23 @@ function HomePage() {
       try {
         const newsPostsData = await getNewsPosts();
         // Sort the posts by date in descending order (latest post first)
-        const sortedNewsPosts = newsPostsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const sortedNewsPosts = newsPostsData.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
         setAllNewsPosts(sortedNewsPosts);
         updateDisplayedNewsPosts();
       } catch (error) {
         console.error("Error fetching newsPosts:", error);
       }
     };
-  
+
     fetchNewsPosts();
     window.addEventListener("resize", updateDisplayedNewsPosts);
-  
+
     return () => {
       window.removeEventListener("resize", updateDisplayedNewsPosts);
     };
   }, [getNewsPosts, updateDisplayedNewsPosts]);
-  
 
   return (
     <Layout>
@@ -148,7 +149,6 @@ function HomePage() {
                 src="/images/forsnacks.jpeg"
                 title="Nyheter"
                 description="Uppdatera dig om det senaste"
-                className=""
               />
             </Link>
           </div>
