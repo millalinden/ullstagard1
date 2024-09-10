@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link
           rel="icon"
-          href="/images/icons/ullsta1.svg"
+          href="/images/icons/Teckning Ullsta.jpg"
           type="image/svg+xml"
         />
       </Head>
