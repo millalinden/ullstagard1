@@ -1,3 +1,4 @@
+"use client";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -10,7 +11,10 @@ const items = [
   { type: "image", src: "/images/dukning.jpg" },
   { type: "placeholder" },
   { type: "image", src: "/images/jul.jpeg" },
-  { type: "placeholder", text: "Ullsta Gård har i generationer varit familjens samlingsplats för både födelsedagar, bröllop och högtider. Huset invigdes 1919 med en storslagen fest, där flaggor vajade och påfåglar stolt spatserade – en inledning till många firanden som följt."},
+  {
+    type: "placeholder",
+    text: "Ullsta Gård har i generationer varit familjens samlingsplats för både födelsedagar, bröllop och högtider. Huset invigdes 1919 med en storslagen fest, där flaggor vajade och påfåglar stolt spatserade – en inledning till många firanden som följt.",
+  },
 ];
 
 export default function ImageSquareComponent() {
@@ -35,15 +39,9 @@ export default function ImageSquareComponent() {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="lg:grid lg:grid-cols-4 lg:gap-2"
-    >
+    <section ref={containerRef} className="lg:grid lg:grid-cols-4 lg:gap-2">
       {items.map((item, index) => (
-        <div
-          key={index}
-          className="box w-78 aspect-square overflow-hidden"
-        >
+        <div key={index} className="box w-78 aspect-square overflow-hidden">
           {item.type === "image" ? (
             <img
               src={item.src}
@@ -51,7 +49,10 @@ export default function ImageSquareComponent() {
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full bg-offwhite font-cabinet p-2" > {item.text}</div>
+            <div className="w-full h-full bg-offwhite font-cabinet p-2">
+              {" "}
+              {item.text}
+            </div>
           )}
         </div>
       ))}
