@@ -67,15 +67,14 @@ export default function GuestBook() {
         </section>
         
 
-        <section className="h-full mb-20">
-  <h3 className="font-cabinet text-[7vw] text-blueberry mx-3 mb-8 lg:text-[4vw] lg:mx-5">
-    Delade stunder & hälsningar
-  </h3>
-  <div className="lg:mx-5 lg:grid lg:grid-cols-2 lg:gap-8 lg:justify-items-center">
-    <Comment />
-  </div>
-</section>
-
+        <section className=" h-full mb-20">
+          <h3 className="font-cabinet text-[7vw] text-blueberry mx-3 mb-8 lg:text-[4vw] lg:mx-5 lg:mb-20">
+            Delade stunder & hälsningar
+          </h3>
+          <div className="lg:mx-5 lg:grid lg:grid-cols-2 lg:gap-8 lg:justify-items-center">
+            <Comment />
+          </div>
+        </section>
 
         {/* Form - Initially off-screen */}
         <div

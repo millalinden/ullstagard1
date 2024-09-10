@@ -42,7 +42,7 @@ const CommentItem = ({ comment }) => {
   
     return (
       <div ref={commentRef} className="mb-16 lg:w-3/4 lg:flex lg:flex-col lg:items-start">
-        <p className="font-cabinet text-sm italic lg:text-[1vw]">{comment.comment}</p>
+        <p className="font-cabinet text-sm italic lg:text-[1.5vw] lg:leading-7 lg:mb-5">{comment.comment}</p>
         <div className="flex">
           <p className="font-medium mt-1 font-cabinet pr-1 text-sm lg:text-[1vw] text-[#474747]">
             {comment.firstName}
