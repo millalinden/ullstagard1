@@ -74,7 +74,7 @@ function Gallery() {
 
   return (
     <Layout>
-      <section className="flex gap-2 justify-start mx-3 flex-wrap mt-24 lg:mt-32 lg:gap-4">
+      <section className="flex gap-2 justify-start mx-3 flex-wrap mt-24 lg:mx-5 lg:mt-32 lg:gap-4">
         <FilterButton
           onClick={() => handleTagClick("Alla")}
           className={`uppercase font-medium ${
@@ -117,9 +117,9 @@ function Gallery() {
         </FilterButton>
       </section>
 
-      <hr className="border-black mx-3 mt-3 lg:mt-5" />
+      <hr className="border-black mx-3 mt-3 lg:mx-5 lg:mt-5" />
       {/* Grid Layout Buttons */}
-      <section className="flex justify-end gap-1 mx-3 mt-2">
+      <section className="lg:hidden flex justify-end gap-1 mx-3 mt-2">
         <button onClick={handleGridCol1} className="">
           <LuRectangleVertical size={18}/>
         </button>
