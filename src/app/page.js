@@ -134,10 +134,10 @@ function HomePage() {
       </div>
       <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-20" />
 
-      <section className="flex flex-col lg:my-20">
+      <section className="flex flex-col mb-10 lg:my-20">
         {/* White background container for the heading */}
         <div className="mx-3 leading-none bg-[#FFFDFA] md:mx-10 lg:h-full lg:items-center lg:justify-center">
-          <h2 className="mb-5 text-[8vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:mb-10 lg:whitespace-nowrap">
+          <h2 className="mb-5 text-[10vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:mb-10 lg:whitespace-nowrap">
             Läs mer
           </h2>
         </div>

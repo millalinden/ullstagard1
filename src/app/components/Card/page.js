@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function Card({ src, description, alt, className, title }) {
   return (
     <section
-      className={`flex lg:flex-shrink-0 md:flex md:flex-col md:items-start lg:flex lg:flex-col lg:items-start lg:mx-0 ${className} font-cabinet mx-3 mb-4`}
+      className={`flex lg:flex-shrink-0 md:flex md:flex-col md:items-start lg:flex lg:flex-col lg:items-start lg:mx-0 ${className} font-cabinet mx-3 mb-3`}
     >
-      <div className="w-1/3 h-32 md:w-full md:h-full md:aspect-square lg:w-full lg:h-full lg:relative lg:aspect-square overflow-hidden group">
+      <div className=" h-32 md:w-full md:h-full md:aspect-square lg:w-full lg:h-full lg:relative lg:aspect-square overflow-hidden group">
         <Image
           src={src}
           width={400}
@@ -30,11 +30,11 @@ export default function Card({ src, description, alt, className, title }) {
         </div>
       </div>
 
-      <div className="flex flex-col px-5 lg:px-0">
-        <p className="lg:hidden mt-2 text-[4vw] text-blueberry font-bold leading-tight lg:text-[1.5vw]">
+      <div className="w-[90%] flex flex-col px-5 lg:px-0">
+        <p className="lg:hidden text-[5vw] text-blueberry font-bold leading-tight lg:text-[1.5vw]">
           {title}
         </p>
-        <p className="lg:hidden mt-2 text-[4vw] lg:text-[1.5vw] text-blueberry leading-tight text-left lg:text-none">
+        <p className="flex text-[3.5vw] text-blueberry leading-tight text-left lg:hidden lg:text-[1.5vw] lg:text-none">
           {description}
         </p>
       </div>
