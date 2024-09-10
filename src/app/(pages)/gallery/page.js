@@ -119,7 +119,7 @@ function Gallery() {
 
       <hr className="border-black mx-3 mt-3 lg:mx-5 lg:mt-5" />
       {/* Grid Layout Buttons */}
-      <section className="lg:hidden flex justify-end gap-1 mx-3 mt-2">
+      <section className="lg:hidden md:hidden flex justify-end gap-1 mx-3 mt-2">
         <button onClick={handleGridCol1} className="">
           <LuRectangleVertical size={18}/>
         </button>

@@ -17,9 +17,9 @@ export default function Card({ src, description, alt, className, title }) {
         />
 
         {/* Title and description - visible on hover */}
-        <div className="text-white hidden lg:flex lg:justify-between lg:items-start lg:absolute lg:top-0 lg:left-0 lg:w-full lg:p-4 lg:opacity-0 group-hover:opacity-100 lg:transition lg:duration-500 lg:ease-in-out">
+        <div className="text-white hidden md:flex md:justify-between md:items-start md:absolute md:top-0 md:left-0 md:w-full md:p-4 md:opacity-0 md:group-opacity-100 lg:flex lg:justify-between lg:items-start lg:absolute lg:top-0 lg:left-0 lg:w-full lg:p-4 lg:opacity-0 group-hover:opacity-100 lg:transition lg:duration-500 lg:ease-in-out">
           {/* Title in the left top corner */}
-          <p className="lg:text-[1.3vw] lg:font-medium lg:uppercase lg:tracking-widest lg:self-start">
+          <p className="md:text-[1vw] md:font-medium md:uppercase md:tracking-widest md:self-start lg:text-[1.3vw] lg:font-medium lg:uppercase lg:tracking-widest lg:self-start">
             {title}
           </p>
 
@@ -30,7 +30,7 @@ export default function Card({ src, description, alt, className, title }) {
         </div>
       </div>
 
-      <div className="w-[90%] flex flex-col px-5 lg:px-0">
+      <div className="md:hidden w-[90%] flex flex-col px-5 lg:px-0">
         <p className="lg:hidden text-[5vw] text-blueberry font-bold leading-tight lg:text-[1.5vw]">
           {title}
         </p>

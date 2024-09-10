@@ -17,14 +17,14 @@ export default function Contact() {
         </div>
         <section className="lg:flex-col">
           <section className="mb-16 font-cabinet flex flex-col items-start lg:mt-48 lg:justify-start lg:items-end ">
-            <div className="flex items-start justify-center space-x-12 mx-4 lg:mx-3 lg:space-x-28 lg:justify-end">
+            <div className="flex items-start justify-center space-x-12 md:space-x-32 mx-4 lg:mx-3 lg:space-x-28 lg:justify-end">
               <div className="flex-shrink-0">
-                <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] ">
+                <h2 className="text-[6vw] leading-tight text-blueberry  md:text-[4vw] lg:text-[1.4vw] ">
                   Hitta Hit
                 </h2>
               </div>
               <div className="ml-4 flex-1">
-                <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
+                <p className="text-[6vw] leading-tight text-blueberry md:text-[4vw] lg:text-[1.4vw]">
                   Ullsta Gård ligger vackert beläget mellan två sjöar i
                   Sörmland. Vänligen se nedan för vägbeskrivningar och
                   information om hur du lättast hittar till oss.
@@ -34,14 +34,14 @@ export default function Contact() {
           </section>
 
           <section className="font-cabinet flex flex-col items-start mb-20 lg:justify-center ">
-            <div className="flex items-start justify-center space-x-[3.8rem] mx-4 lg:space-x-32">
+            <div className="flex items-start justify-center space-x-[3.8rem] md:space-x-[9rem] mx-4 lg:space-x-32">
               <div className="flex-shrink-0">
-                <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] ">
+                <h2 className="text-[6vw] leading-tight text-blueberry md:text-[4vw] lg:text-[1.4vw] ">
                   Adress
                 </h2>
               </div>
               <div className="ml-4 flex-1">
-                <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
+                <p className="text-[6vw] leading-tight text-blueberry md:text-[4vw] lg:text-[1.4vw]">
                   Gåsinge-Ullsta Stora Huset <br></br>646 91 Gnesta
                 </p>
               </div>

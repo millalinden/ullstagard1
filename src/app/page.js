@@ -132,7 +132,7 @@ function HomePage() {
         </div>
 
         {/* Scrollable container for the cards */}
-        <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 lg:mx-16 lg:gap-3">
+        <div className="md:grid md:grid-cols-3 md:mx-8 lg:grid lg:grid-cols-3 lg:mx-16 lg:gap-3">
           <div className="">
             <Link href="/history">
               <Card

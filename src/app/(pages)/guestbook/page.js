@@ -54,7 +54,7 @@ export default function GuestBook() {
                 </div>
                 <p
                   
-                  className="font-cabinet font-regular z-20 leading-[3rem] text-[15vw] text-blueberry mx-3 lg:text-[7vw] lg:w-2/3 lg:text-center lg:mb-10 lg:px-3 lg:leading-none"
+                  className="font-cabinet font-regular z-20 leading-[3rem] text-[15vw] text-blueberry mx-3 md:text-[15vw] md:leading-[6rem] lg:text-[7vw] lg:w-2/3 lg:text-center lg:mb-10 lg:px-3 lg:leading-none"
                 >
                   Dela dina <i>minnen och hälsningar</i> digitalt.
                 </p>
@@ -71,7 +71,7 @@ export default function GuestBook() {
                 </div>
               </section>
             </div>
-            <div className="lg:hidden lg:mt-[-200px]">
+            <div className="lg:hidden lg:mt-[-200px] md:mt-[-50px]">
               <Image
                 src="/images/falt.jpeg"
                 width={3024}
