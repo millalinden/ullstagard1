@@ -84,19 +84,18 @@ const cabinet = localFont({
   variable: "--font-cabinet",
 });
 
-const metadata = {
-  title: "Ullsta Gård",
-  description:
-    "Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927 och är idag en viktig del i familjens fritid med perfekt närhet till Stockholm.",
-};
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="sv">
       <Head>
+        <title>Ullsta Gård</title>
+        <meta
+          name="description"
+          content="Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927 och är idag en viktig del i familjens fritid med perfekt närhet till Stockholm."
+        />
         <link
           rel="icon"
-          href="/images/icons/Teckning Ullsta.jpg"
+          href="/images/Teckning Ullsta.jpg"
           type="image/svg+xml"
         />
       </Head>
