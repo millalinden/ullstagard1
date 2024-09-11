@@ -8,7 +8,7 @@ const items = [
   { type: "image", src: "/images/kalas.jpeg" },
   { type: "placeholder" },
   { type: "image", src: "/images/fördrink.jpeg" },
-  { type: "image", src: "/images/dukning.jpg" },
+  { type: "image", src: "/images/midsommar.jpeg" },
   { type: "placeholder" },
   { type: "image", src: "/images/jul.jpeg" },
   {
