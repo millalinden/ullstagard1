@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <Layout>
       <section className="lg:flex lg:w-full lg:h-full">
-        <div className="mt-24 lg:mt-48 w-full h-[350px] mb-5 overflow-hidden lg:w-[1500px] lg:h-[600px]">
+        <div className="mt-24 lg:mt-32 w-full h-[350px] mb-5 overflow-hidden lg:w-[1500px] lg:h-[600px]">
           <Image
             className="w-full h-full object-cover lg:object-top	px-3"
             src="/images/IMG_0577.jpeg"
@@ -16,7 +16,7 @@ export default function Contact() {
           />
         </div>
         <section className="lg:flex-col">
-          <section className="mb-16 font-cabinet flex flex-col items-start lg:mt-48 lg:justify-start lg:items-end ">
+          <section className="mb-16 font-cabinet flex flex-col items-start lg:mt-32 lg:justify-start lg:items-end ">
             <div className="flex items-start justify-center space-x-12 md:space-x-32 mx-4 lg:mx-3 lg:space-x-28 lg:justify-end">
               <div className="flex-shrink-0">
                 <h2 className="text-[6vw] leading-tight text-blueberry  md:text-[4vw] lg:text-[1.4vw] ">
@@ -50,7 +50,7 @@ export default function Contact() {
         </section>
       </section>
 
-      <section className="hidden lg:block font-cabinet mb-16 lg:justify-center lg:mt-10">
+      <section className="hidden lg:block font-cabinet mb-16 lg:justify-center ">
         {/* First section */}
         <div className="grid grid-cols-2 gap-x-12 mx-4 lg:gap-x-1 lg:pr-5">
           <div className="flex-shrink-0">

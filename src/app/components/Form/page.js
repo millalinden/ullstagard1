@@ -32,11 +32,11 @@ export default function Form({ children, closeForm }) {
   return (
     <>
       {successMessage ? (
-        <div className="flex items-center justify-center w-full h-screen bg-black text-white">
+        <div className="flex items-center justify-center w-full h-screen bg-[#FAF6EA] text-blueberry">
           <button
             type="button"
             onClick={closeForm}
-            className="absolute top-8 right-8 text-white border-none"
+            className="absolute top-8 right-8 text-blueberry border-none"
           >
             <IoCloseOutline size={25} />
           </button>
@@ -46,17 +46,17 @@ export default function Form({ children, closeForm }) {
         </div>
       ) : (
         <form
-          className="py-24 text-white w-full h-screen bg-black px-10 lg:px-20 lg:top-4 lg:py-16 lg:max-h-[50rem] overflow-hidden relative"
+          className="py-24 text-blueberry w-full h-screen bg-[#FAF6EA] px-10 lg:px-20 lg:top-8 lg:py-16 lg:max-h-[50rem] overflow-hidden relative"
           onSubmit={handleSubmit} // Use the custom submit handler
         >
           <button
             type="button"
             onClick={closeForm}
-            className="absolute top-8 right-8 text-white border-none"
+            className="absolute top-8 right-8 text-blueberry border-none"
           >
             <IoCloseOutline size={25} />
           </button>
-          <h2 className="font-cabinet text-white lg:font-medium text-[6vw] pb-5 lg:pb-10 lg:text-[3vw] lg:w-1/3">
+          <h2 className="font-cabinet text-blueberry lg:font-medium text-[6vw] pb-5 lg:pb-10 lg:text-[3vw] lg:w-1/3">
             Dela gärna en mening om ditt besök!
           </h2>
           <p className="mb-10 font-cabinet lg:text-[1.3vw] lg:w-1/3">
@@ -125,7 +125,7 @@ export default function Form({ children, closeForm }) {
               <div className="absolute mt-24 right-10 ">
                 <Button
                   type="submit"
-                  className="uppercase border border-white mt-5 tracking-widest font-cabinet text-[4vw] cursor-pointer lg:text-[1vw] px-4 py-3 transition-blueberry duration-[700ms] hover:bg-white"
+                  className="uppercase border border-blueberry mt-5 tracking-widest font-cabinet text-[4vw] cursor-pointer lg:text-[1vw] px-4 py-3 transition-blueberry duration-[700ms] hover:bg-blueberry"
                 >
                   Skicka kommentar
                 </Button>

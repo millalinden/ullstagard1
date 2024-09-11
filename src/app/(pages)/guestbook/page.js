@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Form from "../../components/Form/page";
 import Button from "../../components/Button/page";
 import Layout from "../../components/Header/layout";
@@ -20,6 +20,20 @@ export default function GuestBook() {
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
   };
+
+
+  useEffect(() => {
+    if (isFormVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup to ensure overflow is reset when component unmounts or form closes
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isFormVisible]);
 
   useGSAP(() => {
     gsap.from(titleRef.current, {
