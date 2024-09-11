@@ -1,6 +1,5 @@
 "use client";
 
-import Layout from "./components/Header/layout";
 import Image from "next/image";
 import useContentful from "./utils/useContentful";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
@@ -47,7 +46,7 @@ function HomePage() {
   }, [getNewsPosts, updateDisplayedNewsPosts]);
 
   return (
-    <Layout>
+    <>
       <section className="mt-24 lg:mb-10 lg:mt-32 ">
         <div className="mb-10 lg:mb-5 lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col ">
           <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw] lg:mb-8">
@@ -164,7 +163,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 

@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Form from "../../components/Form/page";
 import Button from "../../components/Button/page";
-import Layout from "../../components/Header/layout";
 import Image from "next/image";
 import Comment from "@/app/components/Comment/page";
 import ImageSquareComponent from "@/app/components/ImageSquareComponent/page";
@@ -20,7 +19,6 @@ export default function GuestBook() {
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
   };
-
 
   useEffect(() => {
     if (isFormVisible) {
@@ -46,7 +44,7 @@ export default function GuestBook() {
   }, []);
 
   return (
-    <Layout>
+    <>
       {/* Main container to hold the guestbook and form */}
       <div className="relative w-screen overflow-hidden">
         {/* Guestbook Content */}
@@ -56,20 +54,17 @@ export default function GuestBook() {
           }`}
         >
           <div className="relative ">
-            <div ref={titleRef} className="lg:flex-col  lg:flex  lg:items-center lg:justify-center ">
+            <div
+              ref={titleRef}
+              className="lg:flex-col  lg:flex  lg:items-center lg:justify-center "
+            >
               <section className="relative z-10 lg:z-0 lg:w-screen   lg:flex lg:flex-col lg:items-center lg:justify-start">
-                <div
-                  
-                  className="mt-24 mb-5 flex justify-start items-center mx-3 "
-                >
+                <div className="mt-24 mb-5 flex justify-start items-center mx-3 ">
                   <h2 className=" text-left font-satoshi font-medium tracking-wide uppercase text-blueberry/70 text-lg mb-5 lg:text-[1vw] lg:mx-3 leading-none lg:pt-20">
                     Ullsta Gård Gästbok
                   </h2>
                 </div>
-                <p
-                  
-                  className="font-cabinet font-regular z-20 leading-[3rem] text-[15vw] text-blueberry mx-3 md:text-[15vw] md:leading-[6rem] lg:text-[7vw] lg:w-2/3 lg:text-center lg:mb-10 lg:px-3 lg:leading-none"
-                >
+                <p className="font-cabinet font-regular z-20 leading-[3rem] text-[15vw] text-blueberry mx-3 md:text-[15vw] md:leading-[6rem] lg:text-[7vw] lg:w-2/3 lg:text-center lg:mb-10 lg:px-3 lg:leading-none">
                   Dela dina <i>minnen och hälsningar</i> digitalt.
                 </p>
                 <div className="relative -mt-6 lg:static lg:mb-20">
@@ -120,6 +115,6 @@ export default function GuestBook() {
           <Form closeForm={toggleFormVisibility} />
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
