@@ -99,9 +99,9 @@ function HomePage() {
               )}
               <hr className="lg:hidden border-black mx-3 md:mx-10 lg:mb-16 lg:mx-20" />
               <div className="flex justify-between items-center mx-4 mr-10 mt-5 md:mx-10 lg:mx-4 lg:mb-1 lg:flex-row">
-                <h4 className="text-[4.5vw] font-cabinet tracking-wide mr-5 md:text-[2.5vw] lg:mx-7 lg:text-[1.3vw] font-bold lg:ml-0 lg:mt-4">
+                <h3 className="text-[4.5vw] font-cabinet tracking-wide mr-5 md:text-[2.5vw] lg:mx-7 lg:text-[1.3vw] font-bold lg:ml-0 lg:mt-4">
                   {post.title}
-                </h4>
+                </h3>
                 <p className="text-[4.5vw] tracking-wide font-regular md:text-[2vw] lg:text-[1.3vw] lg:mt-4">
                   {new Date(post.date).toLocaleDateString()}
                 </p>
@@ -115,7 +115,11 @@ function HomePage() {
       </section>
       <div className="flex justify-end mr-10 lg:mr-32 lg:mb-4 ">
         <Link href="/news">
-          <button className="cursor-pointer ">
+          <button
+            className="cursor-pointer"
+            aria-label="Go to news page"
+            role="link"
+          >
             <HiOutlineArrowLongRight size={30} />
           </button>
         </Link>
