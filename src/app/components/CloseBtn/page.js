@@ -11,7 +11,7 @@ export default function CloseButton({ onClick, className = "" }) {
         <IoCloseOutline />
       </span>
       {/* New text coming from the bottom on hover */}
-      <span className="absolute inset-0 flex items-center justify-center transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 hover:text-blueberry">
+      <span className="absolute inset-0 flex items-center justify-center transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 hover:text-white">
         <IoCloseOutline />
       </span>
     </button>

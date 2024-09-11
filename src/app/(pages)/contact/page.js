@@ -50,52 +50,51 @@ export default function Contact() {
         </section>
       </section>
 
-      <section className="hidden lg:block font-cabinet mb-16 lg:justify-center">
-  {/* First section */}
-  <div className="grid grid-cols-2 gap-x-12 mx-4 lg:gap-x-1 lg:pr-5">
-    <div className="flex-shrink-0">
-      <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] lg:font-none lg:w-64">
-        Med kollektivtrafik från Stockholm
-      </h2>
-    </div>
-    <div className="lg:w-5/6">
-      <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
-        Från Stockholm Central ta pendeltåget eller Mälartåget till Gnesta via
-        Södertälje Hamn. Det går att ta buss till Ullsta från Gnesta med
-        Sörmlandstrafiken. Hållplatsen heter Ullsta Gåsinge-Dillnäs.
-      </p>
-    </div>
-  </div>
+      <section className="hidden lg:block font-cabinet mb-16 lg:justify-center lg:mt-10">
+        {/* First section */}
+        <div className="grid grid-cols-2 gap-x-12 mx-4 lg:gap-x-1 lg:pr-5">
+          <div className="flex-shrink-0">
+            <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] lg:font-none lg:w-64">
+              Med kollektivtrafik från Stockholm
+            </h2>
+          </div>
+          <div className="lg:w-5/6">
+            <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
+              Från Stockholm Central ta pendeltåget eller Mälartåget till Gnesta
+              via Södertälje Hamn. Det går att ta buss till Ullsta från Gnesta
+              med Sörmlandstrafiken. Hållplatsen heter Ullsta Gåsinge-Dillnäs.
+            </p>
+          </div>
+        </div>
 
-  {/* Second section */}
-  <div className="grid grid-cols-2 gap-x-12 mx-4 lg:gap-x-1 lg:pr-5 lg:mt-20">
-    <div className="flex-shrink-0">
-      <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] lg:font-none lg:w-64">
-        Med bil från Stockholm
-      </h2>
-    </div>
-    <div className="lg:w-5/6">
-      <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
-        Kör E20/E4 söderut mot Helsingborg/Göteborg/Södertälje. <br />
-        Efter 25-30 minuter i Södertälje, sväng av höger efter järnvägsbron mot
-        Göteborg/Strängnäs E20.
-        <br /> Efter ca. 20 minuter, sväng av höger vid Läggesta trafikplats
-        mot Mariefred/Nyköping väg 223.
-        <br /> Sväng höger direkt efter avfarten, och efter 80 meter vänster på
-        väg 223 mot Nyköping. <br />
-        Följ väg 223 parallellt med motorvägen i 1 km, sväng höger på väg 223
-        mot Nyköping och kör under motorvägen. <br />
-        Efter ca. 1 mil passerar ni Laxne, håll höger mot Nyköping och fortsätt
-        på väg 223.
-        <br /> I byn Blacksta, kör rakt fram vid trevägskorsningen mot Gnesta
-        och lämna väg 223.
-        <br /> Efter ca. 800 meter ser ni ett gult hus med röda byggnader, kör
-        upp till det gula huset, ni är framme.
-      </p>
-    </div>
-  </div>
-</section>
-
+        {/* Second section */}
+        <div className="grid grid-cols-2 gap-x-12 mx-4 lg:gap-x-1 lg:pr-5 lg:mt-20">
+          <div className="flex-shrink-0">
+            <h2 className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw] lg:font-none lg:w-64">
+              Med bil från Stockholm
+            </h2>
+          </div>
+          <div className="lg:w-5/6">
+            <p className="text-[6vw] leading-tight text-blueberry lg:text-[1.4vw]">
+              Kör E20/E4 söderut mot Helsingborg/Göteborg/Södertälje. <br />
+              Efter 25-30 minuter i Södertälje, sväng av höger efter
+              järnvägsbron mot Göteborg/Strängnäs E20.
+              <br /> Efter ca. 20 minuter, sväng av höger vid Läggesta
+              trafikplats mot Mariefred/Nyköping väg 223.
+              <br /> Sväng höger direkt efter avfarten, och efter 80 meter
+              vänster på väg 223 mot Nyköping. <br />
+              Följ väg 223 parallellt med motorvägen i 1 km, sväng höger på väg
+              223 mot Nyköping och kör under motorvägen. <br />
+              Efter ca. 1 mil passerar ni Laxne, håll höger mot Nyköping och
+              fortsätt på väg 223.
+              <br /> I byn Blacksta, kör rakt fram vid trevägskorsningen mot
+              Gnesta och lämna väg 223.
+              <br /> Efter ca. 800 meter ser ni ett gult hus med röda byggnader,
+              kör upp till det gula huset, ni är framme.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-4 mb-10 lg:hidden">
         <Accordion
