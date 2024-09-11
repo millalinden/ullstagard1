@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export const metadata = {
-  title: "Senaste Nytt | Ullsta Gård",
+  title: "Ullsta Gård | Senaste Nytt",
   description:
     "Håll dig uppdaterad med de senaste nyheterna och händelserna från Ullsta Gård. Läs om vad som nyligen har hänt på gården och viktiga uppdateringar.",
 };
