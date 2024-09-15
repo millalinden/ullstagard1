@@ -72,7 +72,7 @@ function Gallery() {
   const handleGridCol2 = () => setGridCols(2);
 
   return (
-    <>
+    <Layout>
       <section className="flex gap-2 justify-start mx-3 flex-wrap mt-24 lg:mx-5 lg:mt-32 lg:gap-4">
         <FilterButton
           onClick={() => handleTagClick("Alla")}
@@ -163,7 +163,7 @@ function Gallery() {
           selectedIndex={selectedIndex}
         />
       )}
-    </>
+    </Layout>
   );
 }
 
