@@ -1,10 +1,9 @@
-import Layout from "../../components/Header/layout";
 import Image from "next/image";
 import Accordion from "../../components/Accordion/accordion";
 
 export default function Contact() {
   return (
-    <Layout>
+    <>
       <section className="lg:flex lg:w-full lg:h-full">
         <div className="mt-24 lg:mt-32 w-full h-[350px] mb-5 overflow-hidden lg:w-[1500px] lg:h-[600px]">
           <Image
@@ -126,6 +125,6 @@ export default function Contact() {
           content="Från Stockholm Central ta pendeltåget till Gnesta via Södertälje Hamn. Det går att ta buss till Ullsta från Gnesta med Sörmlandstrafiken. Hållplatsen heter Ullsta Gåsinge-Dillnäs."
         />
       </section>
-    </Layout>
+    </>
   );
 }

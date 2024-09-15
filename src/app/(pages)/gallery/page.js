@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useContentful from "../../utils/useContentful";
-import Layout from "../../components/Header/layout";
 import FilterButton from "../../components/FilterBtn/page";
 import ImageModal from "../../components/ImageModal/page";
 
@@ -73,7 +72,7 @@ function Gallery() {
   const handleGridCol2 = () => setGridCols(2);
 
   return (
-    <Layout>
+    <>
       <section className="flex gap-2 justify-start mx-3 flex-wrap mt-24 lg:mx-5 lg:mt-32 lg:gap-4">
         <FilterButton
           onClick={() => handleTagClick("Alla")}
@@ -118,7 +117,7 @@ function Gallery() {
       </section>
 
       <hr className="border-black mx-3 mt-3 lg:mx-5 lg:mt-5" />
-      {/* Grid Layout Buttons */}
+      {/* Grid  Buttons */}
       <section className="lg:hidden md:hidden flex justify-end gap-1 mx-3 mt-2">
         <button onClick={handleGridCol1} className="">
           <LuRectangleVertical size={18}/>
@@ -164,7 +163,7 @@ function Gallery() {
           selectedIndex={selectedIndex}
         />
       )}
-    </Layout>
+    </>
   );
 }
 

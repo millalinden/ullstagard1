@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Form from "../../components/Form/page";
 import Button from "../../components/Button/page";
-import Layout from "../../components/Header/layout";
 import Image from "next/image";
 import Comment from "@/app/components/Comment/page";
 import ImageSquareComponent from "@/app/components/ImageSquareComponent/page";
@@ -46,7 +45,7 @@ export default function GuestBook() {
   }, []);
 
   return (
-    <Layout>
+    <>
       {/* Main container to hold the guestbook and form */}
       <div className="relative w-screen overflow-hidden">
         {/* Guestbook Content */}
@@ -120,6 +119,6 @@ export default function GuestBook() {
           <Form closeForm={toggleFormVisibility} />
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

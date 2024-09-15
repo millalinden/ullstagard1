@@ -3,15 +3,13 @@ import NavLinkAdd from "./NavLinkAdd";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export default function Sidebar({ isOpen }) {
+export default function Sidebar({ isOpen, onClose }) {
   const sidebarRef = useRef(null);
   const navLinksRef = useRef([]);
 
   useLayoutEffect(() => {
-    // Initial sidebar setup
     gsap.set(sidebarRef.current, { y: "-100%" });
 
-    // Animation on isOpen change
     if (isOpen) {
       gsap.to(sidebarRef.current, {
         y: 0,
@@ -64,7 +62,7 @@ export default function Sidebar({ isOpen }) {
               className="pb-5"
             >
               {link.number}
-              <NavLink href={link.href}>{link.text}</NavLink>
+              <NavLink href={link.href} onClick={onClose}>{link.text}</NavLink>
             </li>
           ))}
         </ul>
@@ -73,13 +71,13 @@ export default function Sidebar({ isOpen }) {
             ref={(el) => (navLinksRef.current[links.length] = el)}
             className="pb-2"
           >
-            <NavLinkAdd href="/news">Senaste Händelserna</NavLinkAdd>
+            <NavLinkAdd href="/news" onClick={onClose}>Senaste Händelserna</NavLinkAdd>
           </li>
           <li
             ref={(el) => (navLinksRef.current[links.length + 1] = el)}
             className="pb-5"
           >
-            <NavLinkAdd href="/guestbook">Gästbok</NavLinkAdd>
+            <NavLinkAdd href="/guestbook" onClick={onClose}>Gästbok</NavLinkAdd>
           </li>
         </ul>
       </div>

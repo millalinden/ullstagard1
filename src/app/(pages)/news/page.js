@@ -1,5 +1,4 @@
 "use client";
-import Layout from "../../components/Header/layout";
 import useContentful from "../../utils/useContentful";
 import React, { useEffect, useState } from "react";
 import FilterButton from "@/app/components/FilterBtn/page";
@@ -41,7 +40,7 @@ export default function News() {
   }, [selectedYear, allNewsPosts]);
 
   return (
-    <Layout>
+    <>
       <section className="">
         <div className="mt-24 mb-5 flex justify-start items-center mx-3 lg:mt-28 lg:mx-4">
           <h2 className="text-left font-satoshi font-medium tracking-wide uppercase text-blueberry/70 text-lg mb-5 lg:text-[1vw] lg:mb-5 leading-none lg:hidden">
@@ -81,6 +80,6 @@ export default function News() {
           </div>
         </section>
       </section>
-    </Layout>
+    </>
   );
 }

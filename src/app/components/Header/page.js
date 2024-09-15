@@ -15,6 +15,10 @@ export default function Header() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY;
@@ -31,7 +35,7 @@ export default function Header() {
     };
 
     const handleResize = () => {
-      const isMobile = window.innerWidth <= 768; // Check if the screen width is <= 768px (mobile)
+      const isMobile = window.innerWidth <= 768;
       if (isMobile) {
         window.addEventListener("scroll", handleScroll);
       } else {
@@ -39,13 +43,9 @@ export default function Header() {
       }
     };
 
-    // Initialize scroll listener based on screen size
     handleResize();
-
-    // Add resize listener to recheck screen size when the window is resized
     window.addEventListener("resize", handleResize);
 
-    // Clean up scroll and resize listeners on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -61,35 +61,26 @@ export default function Header() {
             : "transform -translate-y-full"
         }`}
       >
-        {" "}
         <div className="flex items-center">
           <NavLink href="/">
-            <div
-              className={`relative z-10 transition-opacity duration-300
-              }`}
-            >
+            <div className="relative z-10 transition-opacity duration-300">
               <Image
                 src="/icons/ullsta1.svg"
                 alt="Sketched Image of Ullsta Gard by Olle Qvennerstedt"
                 width={90}
                 height={90}
-                className=""
               />
             </div>
           </NavLink>
         </div>
-        {/* Mobile Menu (Hamburger Menu) */}
         <div className="block lg:hidden z-10">
           <NavButton isOpen={isSidebarOpen} toggleMenu={toggleSidebar} />
         </div>
-        {/* Desktop Menu (Horizontal Menu) */}
-        <div className="hidden lg:block lg:leading-none	">
+        <div className="hidden lg:block lg:leading-none">
           <NavBar className="" />
         </div>
       </header>
-      {/* Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} />
-
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </>
   );
 }
