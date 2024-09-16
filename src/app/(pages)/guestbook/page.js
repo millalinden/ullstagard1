@@ -92,16 +92,16 @@ export default function GuestBook() {
 
             {/* IMAGE SQUARE COMPONENT - DESKTOP */}
           </div>
-          <div className="hidden lg:flex lg:min-h-screen lg:w-full lg:items-center lg:justify-center lg:px-3 lg:mb-10">
+          <div className="hidden lg:flex lg:min-h-screen lg:w-full lg:items-center lg:justify-center lg:px-3 lg:mb-20">
             <ImageSquareComponent />
           </div>
         </section>
 
         <section className=" h-full mb-20">
-          <h3 className="font-cabinet font-medium text-[7vw] text-blueberry mx-3 my-8 lg:flex lg:justify-center lg:text-[5vw] lg:mx-3 lg:mb-10">
+          <h3 className="font-cabinet font-medium text-[7vw] text-blueberry mx-3 my-8 lg:flex lg:justify-center lg:text-[5vw] lg:mx-3 lg:mb-20">
             Delade stunder & hälsningar
           </h3>
-          <div className="lg:mx-3 lg:flex lg:flex-row lg:gap-8 lg:justify-items-center lg;flex-wrap">
+          <div className="">
             <Comment />
           </div>
         </section>

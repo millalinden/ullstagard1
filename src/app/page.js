@@ -47,23 +47,23 @@ function HomePage() {
 
   return (
     <>
-      <section className="mt-24 lg:mb-10 lg:mt-32 ">
-        <div className="mb-10 lg:mb-5 lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col ">
-          <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-wide lg:text-[13vw] lg:mb-8">
+      <section className="mt-20 lg:mb-10 lg:mt-28">
+        <div className="mb-5  lg:flex lg:justify-center lg:flex-col lg:items-center md:flex md:justify-center md:flex-col ">
+          <h1 className="hidden lg:block lg:flex lg:flex-col lg:items-center lg:font-black lg:uppercase lg:leading-none lg:text-blueberry lg:tracking-widest lg:text-[11vw] lg:mb-">
             Ullsta Gård
           </h1>
-          <div className="h-full mx-3 md:h-1/5 lg:w-screen lg:px-32	lg:h-[430px] lg:overflow-hidden">
+          <div className="h-full mx-3 md:h-1/5 lg:w-[50rem] lg:px-10	lg:h-[25rem] lg:overflow-hidden ">
             <Image
-              src="/images/frontt.jpeg"
+              src="/images/huste.jpeg"
               alt="Front view of Ullsta Gård"
-              width={3000}
-              height={3000}
+              width={3024}
+              height={4032}
               priority
               className="w-full h-full object-cover lg:object-center"
             />
           </div>
         </div>
-        <p className="px-3 pb-10 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[4vw] md:mx-3 lg:text-[3vw] lg:mx-16 lg:leading-normal">
+        <p className="px-3 pb-10 text-[6.5vw] font-cabinet font-regular leading-none tracking-wide md:text-[4vw] md:mx-3 lg:text-[2.3vw] lg:mx-20 lg:leading-normal">
           Ullsta Gård i Gåsinge socken ligger mitt emellan Gnesta och Mariefred
           i vacker sörmländsk natur. Gården ägs av familjen Lindén sedan 1927
           och är idag en viktig del i familjens fritid med perfekt närhet till
@@ -72,15 +72,24 @@ function HomePage() {
       </section>
 
       {/* Image section */}
-      <section className="lg:hidden mb-10">
-        <div className="flex flex-col lg:flex-row">
-          <div className="h-full w-full mb-3 overflow-hidden lg:hidden lg:h-[500px] lg:w-[1000px] lg:ml-5">
+      <section className="mb-10">
+        <div className="flex flex-row gap-3 mx-3 lg:justify-center">
+          <div className=" h-full w-full mb-3 overflow-hidden lg:flex lg:h-[31rem] lg:w-2/4 lg:ml-5">
             <Image
-              src="/images/lasmar.jpg"
+              src="/images/front2.jpeg"
+              width={3024}
+              height={4032}
+              alt="Side view of Ullsta"
+              className=" w-full h-full lg:object-cover lg:object-center"
+            />
+          </div>
+          <div className=" h-full w-full  overflow-hidden lg:h-[31rem] lg:w-2/6 lg:ml-5">
+            <Image
+              src="/images/frontt.jpeg"
               width={600}
               height={600}
               alt="Side view of Ullsta"
-              className="px-3 w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -126,10 +135,10 @@ function HomePage() {
       </div>
       <hr className="border-black mx-3 mt-2 mb-10 md:mx-10 lg:mb-10 lg:mx-16" />
 
-      <section className="flex flex-col mb-10 lg:my-20">
+      <section className="flex flex-col mb-10 lg:mb-20 lg:">
         {/* White background container for the heading */}
         <div className="mx-3 leading-none bg-[#FFFDFA] md:mx-10 lg:h-full lg:items-center lg:justify-center">
-          <h2 className="mb-5 text-[10vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[6.5vw] lg:mb-10 lg:whitespace-nowrap lg:mx-10">
+          <h2 className="mb-5 text-[10vw] font-cabinet font-black text-blueberry md:text-[9vw] lg:text-[5vw] lg:mb-3 lg:whitespace-nowrap lg:mx-10">
             Läs mer
           </h2>
         </div>

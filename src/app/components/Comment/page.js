@@ -25,7 +25,7 @@ export default function Comment() {
   }, [getGuestbookComment]);
 
   return (
-    <div className="flex flex-col items-start mx-3">
+    <div className="mx-3 lg:mx-0 lg:grid lg:grid-cols-2 lg:gap-8">
       {comments.map((comment, index) => (
         <CommentItem key={index} comment={comment} />
       ))}
@@ -46,7 +46,7 @@ const CommentItem = ({ comment }) => {
       scrollTrigger: {
         trigger: commentRef.current,
         start: "top 80%",
-        stagger:1,
+        stagger: 1,
         toggleActions: "play none none reverse",
       },
     });
@@ -69,9 +69,9 @@ const CommentItem = ({ comment }) => {
   }, []);
 
   return (
-    <div ref={commentRef} className="mb-16 lg:w-2/5 lg:flex lg:flex-col lg:items-start ">
-      <p className="font-cabinet lg:text-[1.5vw] italic">{comment.comment}</p>
-      <div className="flex items-end">
+    <div ref={commentRef} className="mb-16 lg:flex lg:flex-col lg:items-center lg:mx-20 lg:mb-20">
+      <p className="font-cabinet lg:text-[1.8vw] italic lg:items-center lg:text-center ">{comment.comment}</p>
+      <div className="flex items-end lg:items-end">
         <p className="font-medium mt-1 font-cabinet pr-1 lg:text-[1vw] text-[#474747] lg:text-left">
           {comment.firstName}
         </p>

@@ -8,7 +8,7 @@ import ImageModal from "../../components/ImageModal/page";
 import { GoColumns } from "react-icons/go";
 import { LuRectangleVertical } from "react-icons/lu";
 
-function Gallery() {
+export default function Gallery() {
   const { getImages } = useContentful();
   const [images, setImages] = useState([]);
   const [selectedTag, setSelectedTag] = useState("Alla");
@@ -72,7 +72,7 @@ function Gallery() {
   const handleGridCol2 = () => setGridCols(2);
 
   return (
-    <Layout>
+    <>
       <section className="flex gap-2 justify-start mx-3 flex-wrap mt-24 lg:mx-5 lg:mt-32 lg:gap-4">
         <FilterButton
           onClick={() => handleTagClick("Alla")}
@@ -163,8 +163,7 @@ function Gallery() {
           selectedIndex={selectedIndex}
         />
       )}
-    </Layout>
+    </>
   );
 }
 
-export default Gallery;

@@ -37,7 +37,7 @@ export default function Accordion({ title, content }) {
       </div>
       {isOpen && (
         <div
-          className={`transition-all duration-1000 ease-in-out overflow-hidden text-[5vw] md:text-[4vw] font-cabinet text-blueberry lg:text-[1.3vw]  ${
+          className={`transition-all duration-1000 ease-in-out overflow-hidden text-[5vw] md:text-[4vw] font-cabinet text-blueberry lg:text-[1.3vw] ${
             isOpen ? "max-h-screen opacity-100" : "max-h-screen opacity-0"
           }`}
         >

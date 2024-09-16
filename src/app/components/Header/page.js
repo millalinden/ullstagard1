@@ -63,12 +63,13 @@ export default function Header() {
       >
         <div className="flex items-center">
           <NavLink href="/">
-            <div className="relative z-10 transition-opacity duration-300">
+            <div className="relative z-10 transition-opacity duration-300 w-[90px] h-auto">
               <Image
                 src="/icons/ullsta1.svg"
                 alt="Sketched Image of Ullsta Gard by Olle Qvennerstedt"
                 width={90}
                 height={90}
+                className="w-full h-auto" 
               />
             </div>
           </NavLink>

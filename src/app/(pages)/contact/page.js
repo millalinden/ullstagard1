@@ -73,7 +73,7 @@ export default function Contact() {
           <section className="mx-4 mb-20">
             <Accordion
               title="Med kollektivtrafik från Stockholm"
-              content="Från Stockholm Central ta pendeltåget till Gnesta via Södertälje Hamn. Det går att ta buss till Ullsta från Gnesta med Sörmlandstrafiken. Hållplatsen heter Ullsta Gåsinge-Dillnäs."
+              content="Från Stockholm Central ta pendeltåget till Gnesta via Södertälje Hamn eller Mälartåget till Gnesta. Det går att ta buss till Ullsta från Gnesta med Sörmlandstrafiken. Hållplatsen heter Ullsta Gåsinge-Dillnäs."
             />
           </section>
         </section>
