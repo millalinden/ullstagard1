@@ -74,7 +74,7 @@ export default function News() {
         <section className="mx-3 lg:mx-3 lg:flex lg:flex-col lg:mb-20">
           {/* News Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 mt-8">
-            {allNewsPosts.map((post, index) => (
+            {filteredNewsPosts.map((post, index) => (
               <NewsComponent key={index} post={post} />
             ))}
           </div>
@@ -83,3 +83,4 @@ export default function News() {
     </>
   );
 }
+
