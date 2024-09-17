@@ -8,7 +8,7 @@ import ImageModal from "../../components/ImageModal/page";
 import { GoColumns } from "react-icons/go";
 import { LuRectangleVertical } from "react-icons/lu";
 
-export default function Gallery() {
+function Gallery() {
   const { getImages } = useContentful();
   const [images, setImages] = useState([]);
   const [selectedTag, setSelectedTag] = useState("Alla");
@@ -16,6 +16,7 @@ export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState(new Set());
   const [gridCols, setGridCols] = useState(1); // State to control grid columns
+  const [activeButton, setActiveButton] = useState(1); // Track active button for background
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -68,8 +69,15 @@ export default function Gallery() {
     setLoadedImages((prev) => new Set(prev.add(src)));
   };
 
-  const handleGridCol1 = () => setGridCols(1);
-  const handleGridCol2 = () => setGridCols(2);
+  const handleGridCol1 = () => {
+    setGridCols(1);
+    setActiveButton(1); // Set the first button as active
+  };
+
+  const handleGridCol2 = () => {
+    setGridCols(2);
+    setActiveButton(2); // Set the second button as active
+  };
 
   return (
     <>
@@ -117,19 +125,28 @@ export default function Gallery() {
       </section>
 
       <hr className="border-black mx-3 mt-3 lg:mx-5 lg:mt-5" />
-      {/* Grid  Buttons */}
+
+      {/* Grid Layout Buttons */}
       <section className="lg:hidden md:hidden flex justify-end gap-1 mx-3 mt-2">
-        <button onClick={handleGridCol1} className="">
-          <LuRectangleVertical size={18}/>
+        <button
+          onClick={handleGridCol1}
+          className={`px-2 ${activeButton === 1 ? "bg-blueberry text-white rounded-md p-1" : ""}`}
+        >
+          <LuRectangleVertical size={18} />
         </button>
-        <button onClick={handleGridCol2} className="px-2">
+        <button
+          onClick={handleGridCol2}
+          className={`px-2 ${activeButton === 2 ? "bg-blueberry text-white rounded-md p-1" : ""}`}
+        >
           <GoColumns size={20} />
         </button>
       </section>
 
       <section className="mt-3 pb-10 lg:mt-5">
         <div
-          className={`grid grid-cols-${gridCols} gap-3 mx-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 lg:mx-5`}
+          className={`grid gap-3 mx-3 ${
+            gridCols === 1 ? "grid-cols-1" : "grid-cols-2"
+          } md:grid-cols-3 lg:grid-cols-4 lg:gap-4 lg:mx-5`}
         >
           {filteredImages.map((image, index) => (
             <div key={index} className="sm:mt-4 md:mt-0 relative">
@@ -167,3 +184,4 @@ export default function Gallery() {
   );
 }
 
+export default Gallery;

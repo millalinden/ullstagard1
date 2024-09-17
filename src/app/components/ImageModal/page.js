@@ -50,7 +50,7 @@ export default function ImageModal({
                 className={`max-w-full max-h-full transition-opacity duration-300 ${
                   imageLoaded ? "opacity-100" : "opacity-0"
                 }`}
-                onLoadingComplete={() => setImageLoaded(true)}
+                onLoad={() => setImageLoaded(true)}
               />
             </div>
             {/* Only display the description once the image has loaded */}
