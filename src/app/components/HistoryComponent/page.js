@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 export default function HistoryComponent() {
   return (
@@ -23,7 +22,7 @@ export default function HistoryComponent() {
               Det har dock berättats att Ville Widéns far, en svensk emigrant
               till Amerika, kom från Ullsta 1:2, och att hans mor troligen hade
               sina rötter i Ullsta 1:3. Under 1880-talet köptes Ullsta 2:2, och
-              vid den tiden byggdes "Norra magasinet".
+              vid den tiden byggdes &quot;Norra magasinet&quot;.
             </p>
           </div>
           <div className="flex-1 mb-6 lg:mb-0">
