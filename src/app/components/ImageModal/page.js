@@ -23,7 +23,7 @@ export default function ImageModal({
     selectedImage && (
       <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-95 lg:bg-opacity-75 backdrop-blur-lg w-screen">
         <CloseButton
-          className="absolute top-6 right-6 lg:top-5 lg:right-5 text-white"
+          className="absolute top-6 right-6 lg:top-5 lg:right-5 text-white z-40"
           onClick={onClose}
         />
         <div className="relative flex flex-col lg:flex-row items-center">
