@@ -38,8 +38,8 @@ export default function HistoryComponent() {
               År 1916 köptes gården av kreaturshandlarna Persson och Larsson,
               som var svågrar gifta med systrar till fröhandlaren Bertil
               Gustafsson. Persson och Larsson använde Ullsta som sitt sommarnöje
-              och tjänade bra under krigsåren. År 1919 (eller möjligen redan
-              1916) invigdes det nybyggda huset med en stor fest, där flaggor
+              och tjänade bra under krigsåren. År 1919, eller möjligen redan
+              1916 invigdes det nybyggda huset med en stor fest, där flaggor
               hissades och påfåglar visades. Larssonfamiljen bodde på andra
               våningen, medan Perssonfamiljen bodde på första våningen.
             </p>
