@@ -2,6 +2,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import Image from "next/image";
 
 const items = [
   { type: "image", src: "/images/student.jpeg" },
@@ -43,9 +44,11 @@ export default function ImageSquareComponent() {
       {items.map((item, index) => (
         <div key={index} className="box w-78 aspect-square overflow-hidden">
           {item.type === "image" ? (
-            <img
+            <Image
               src={item.src}
               alt={`Image ${index + 1}`}
+              width={500}
+              height={500}
               className="w-full h-full object-cover"
             />
           ) : (
