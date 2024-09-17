@@ -1,12 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Accordion({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      // Reset height before transition
+      contentRef.current.style.height = isOpen ? "auto" : "0px";
+      // Force reflow to apply the transition
+      contentRef.current.offsetHeight;
+      contentRef.current.style.height = isOpen ? `${contentRef.current.scrollHeight}px` : "0px";
+    }
+  }, [isOpen]);
 
   return (
     <div>
@@ -35,17 +46,14 @@ export default function Accordion({ title, content }) {
           </svg>
         </div>
       </div>
-      {isOpen && (
-        <div
-          className={`transition-all duration-1000 ease-in-out overflow-hidden text-[5vw] md:text-[4vw] font-cabinet text-blueberry lg:text-[1.3vw] ${
-            isOpen ? "max-h-screen opacity-100" : "max-h-screen opacity-0"
-          }`}
-        >
-          <hr className="border-black my-1" />
-
-          {content}
-        </div>
-      )}
+      <div
+        ref={contentRef}
+        className={`transition-all duration-500 ease-in-out overflow-hidden text-[5vw] md:text-[4vw] font-cabinet text-blueberry lg:text-[1.3vw]`}
+        style={{ height: isOpen ? 'auto' : '0px' }}
+      >
+        <hr className="border-black my-1" />
+        {content}
+      </div>
     </div>
   );
 }
